@@ -31,12 +31,12 @@
   </requirements>
   <requirements name="Controle do Sistema">
     <composition name="Construção de Relatórios" text="O sistema deve permitir aos gerentes gerar relatórios do uso do estacionamento" derive="//@requirements[name='Relatório%20Diário'] //@requirements[name='Relatório%20Semanal'] //@requirements[name='Relatório%20Mensal']"/>
-    <composition name="Construção de Gráfios" text="O sistema deve permitir aos gerentes gerar gráficos do uso do estacionamento" derive="//@requirements[name='Relatório%20Semanal'] //@requirements[name='Relatório%20Mensal'] //@requirements[name='Relatório%20Diário']"/>
+    <composition name="Construção de Gráfios" text="O sistema deve permitir aos gerentes gerar gráficos do uso do estacionamento" derive="//@requirements[name='Gráfico%20Semanal'] //@requirements[name='Gráfico%20Diário'] //@requirements[name='Gráfico%20Mensal']"/>
   </requirements>
   <requirements name="Relatório Mensal"/>
   <requirements name="Relatório Semanal"/>
   <requirements name="Relatório Diário"/>
-  <requirements name="Relatório Semanal"/>
-  <requirements name="Relatório Mensal"/>
-  <requirements name="Relatório Diário"/>
+  <requirements name="Gráfico Semanal"/>
+  <requirements name="Gráfico Diário"/>
+  <requirements name="Gráfico Mensal"/>
 </sysADL_Sintax:Model>
