@@ -10,8 +10,8 @@
   <requirements name="Entrada de Veículo" text="">
     <composition name="Detecção de Veículo" text="O sistema deve ser capaz de detectar automaticamente a chegada de um veículo"/>
     <composition name="Imprimir Ticket" text="O sistema deverá ser capaz de imprimir um ticket"/>
-    <composition name="Abrir Cancela" text=""/>
     <composition name="Registrar no Banco de Dados" text="Registrar no banco de dados central a hora de entrada e o id do ticket"/>
+    <composition name="Abrir Cancela" text=""/>
   </requirements>
   <requirements name="Luz na Vaga" text="Cada vaga deverá ter uma luz indicadora para sinalizar o status da vaga."/>
   <requirements name="Status da Vaga">
@@ -24,4 +24,19 @@
     <composition name="Atualizar contagem de vagas" text="Ao estacionar ou sair de uma vaga de estacionamento o sistema deverá atualizar a contagem de vagas"/>
     <composition name="Mostrar Contagem de Vagas" text="O sistema deverá ser capaz de mostrar ao usuário um contador de vagas disponíveis em um painel"/>
   </requirements>
+  <requirements name="Saída de Veículos">
+    <composition name="Ler Ticket " text="Antes da saída do veículo o sistema deverá ler o ticket do cliente e calcular o valor devido"/>
+    <composition name="Abrir Cancela" text=""/>
+    <composition name="Receber Pagamento" text="O sistema deverá ser capaz de receber o pagamento do cliente, tanto em dinheiro como em cartão"/>
+  </requirements>
+  <requirements name="Controle do Sistema">
+    <composition name="Construção de Relatórios" text="O sistema deve permitir aos gerentes gerar relatórios do uso do estacionamento" derive="//@requirements[name='Relatório%20Diário'] //@requirements[name='Relatório%20Semanal'] //@requirements[name='Relatório%20Mensal']"/>
+    <composition name="Construção de Gráfios" text="O sistema deve permitir aos gerentes gerar gráficos do uso do estacionamento" derive="//@requirements[name='Relatório%20Semanal'] //@requirements[name='Relatório%20Mensal'] //@requirements[name='Relatório%20Diário']"/>
+  </requirements>
+  <requirements name="Relatório Mensal"/>
+  <requirements name="Relatório Semanal"/>
+  <requirements name="Relatório Diário"/>
+  <requirements name="Relatório Semanal"/>
+  <requirements name="Relatório Mensal"/>
+  <requirements name="Relatório Diário"/>
 </sysADL_Sintax:Model>
