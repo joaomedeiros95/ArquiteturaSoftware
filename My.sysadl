@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sysADL_Sintax:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysADL_Sintax="com.sysADL_Sintax">
+  <packages name="SysADL.types">
+    <architectures xsi:type="sysADL_Sintax:DataTypeDef" name="Int"/>
+    <architectures xsi:type="sysADL_Sintax:DataTypeDef" name="Boolean"/>
+    <architectures xsi:type="sysADL_Sintax:DataTypeDef" name="String"/>
+    <architectures xsi:type="sysADL_Sintax:DataTypeDef" name="Void"/>
+    <architectures xsi:type="sysADL_Sintax:DataTypeDef" name="Real"/>
+  </packages>
+  <requirements name="Status Vaga" text="O Sistema deve indicar o status da vaga" derive="//@requirements[name='Luz%20na%20Vaga']"/>
+  <requirements name="Entrada de Veículo" text="O sistema deve ser capaz de controlar a entrade de veículos">
+    <composition name="Detecção de Veículo" text="O sistema deve ser capaz de detectar automaticamente a chegada de um veículo"/>
+    <composition name="Imprimir Ticket" text="O sistema deverá ser capaz de imprimir um ticket"/>
+    <composition name="Abrir Cancela" text=""/>
+  </requirements>
+  <requirements name="Luz na Vaga" text="Cada vaga deverá ter uma luz indicadora para sinalizar o status da vaga."/>
+</sysADL_Sintax:Model>
