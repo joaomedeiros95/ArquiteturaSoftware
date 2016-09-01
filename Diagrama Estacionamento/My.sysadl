@@ -7,36 +7,39 @@
     <architectures xsi:type="sysADL_Sintax:DataTypeDef" name="Void"/>
     <architectures xsi:type="sysADL_Sintax:DataTypeDef" name="Real"/>
   </packages>
-  <requirements name="Entrada de Veículo" text="">
-    <composition name="Detecção de Veículo" text="O sistema deve ser capaz de detectar automaticamente a chegada de um veículo"/>
-    <composition name="Imprimir Ticket" text="O sistema deverá ser capaz de imprimir um ticket"/>
-    <composition name="Registrar no Banco de Dados" text="Registrar no banco de dados central a hora de entrada e o id do ticket"/>
-    <composition name="Abrir Cancela" text=""/>
-  </requirements>
-  <requirements name="Luz na Vaga" text="Cada vaga deverá ter uma luz indicadora para sinalizar o status da vaga."/>
-  <requirements name="Status da Vaga">
-    <composition name="Indicar Status da Vaga" text="O Sistema deve indicar o status da vaga" derive="//@requirements[name='Luz%20na%20Vaga']"/>
-    <composition name="Atualizar Status Vaga" text="O sistema deve ser capaz de atualizar o status de uma vaga " derive="//@requirements[name='Vaga%20Ocupada'] //@requirements[name='Vaga%20Livre']"/>
-  </requirements>
-  <requirements name="Vaga Ocupada" text="Ao ser detectado um carro na vaga ela deve ser mudada para ocupada"/>
-  <requirements name="Vaga Livre" text="No momento que o carro sair o sistema deverá mudar o status da vaga para livre"/>
-  <requirements name="Contagem de Vagas">
-    <composition name="Atualizar contagem de vagas" text="Ao estacionar ou sair de uma vaga de estacionamento o sistema deverá atualizar a contagem de vagas"/>
-    <composition name="Mostrar Contagem de Vagas" text="O sistema deverá ser capaz de mostrar ao usuário um contador de vagas disponíveis em um painel"/>
-  </requirements>
-  <requirements name="Saída de Veículos">
-    <composition name="Ler Ticket " text="Antes da saída do veículo o sistema deverá ler o ticket do cliente e calcular o valor devido"/>
-    <composition name="Abrir Cancela" text=""/>
-    <composition name="Receber Pagamento" text="O sistema deverá ser capaz de receber o pagamento do cliente, tanto em dinheiro como em cartão"/>
-  </requirements>
-  <requirements name="Controle do Sistema">
-    <composition name="Construção de Relatórios" text="O sistema deve permitir aos gerentes gerar relatórios do uso do estacionamento" derive="//@requirements[name='Relatório%20Diário'] //@requirements[name='Relatório%20Semanal'] //@requirements[name='Relatório%20Mensal']"/>
-    <composition name="Construção de Gráfios" text="O sistema deve permitir aos gerentes gerar gráficos do uso do estacionamento" derive="//@requirements[name='Gráfico%20Semanal'] //@requirements[name='Gráfico%20Diário'] //@requirements[name='Gráfico%20Mensal']"/>
-  </requirements>
   <requirements name="Relatório Mensal"/>
   <requirements name="Relatório Semanal"/>
   <requirements name="Relatório Diário"/>
   <requirements name="Gráfico Semanal"/>
   <requirements name="Gráfico Diário"/>
   <requirements name="Gráfico Mensal"/>
+  <requirements name="Sistema de Controle de Estacionamento">
+    <composition name="Entrada de Veículo" text="">
+      <composition name="Detecção de Veículo" text="O sistema deve ser capaz de detectar automaticamente a chegada de um veículo">
+        <composition name="Imprimir Ticket" text="O sistema deverá ser capaz de imprimir um ticket">
+          <composition name="Registrar no Banco de Dados" text="Registrar no banco de dados central a hora de entrada e o id do ticket">
+            <composition name="Abrir Cancela" text=""/>
+          </composition>
+        </composition>
+      </composition>
+    </composition>
+    <composition name="Saída de Veículos">
+      <composition name="Ler Ticket " text="Antes da saída do veículo o sistema deverá ler o ticket do cliente">
+        <composition name="Receber Pagamento" text="O sistema deverá  calcular o valor devido e posteriormente receber o pagamento do cliente, tanto em dinheiro como em cartão">
+          <composition name="Abrir Cancela" text=""/>
+        </composition>
+      </composition>
+    </composition>
+    <composition name="Status da Vaga" text="O sistema deve indicar o status da Vaga">
+      <composition name="Atualizar Status da Vaga" text="O Sistema deve atualizar o status da vaga quando um carro estacionar"/>
+    </composition>
+    <composition name="Contagem de Vagas">
+      <composition name="Atualizar contagem de vagas" text="Ao estacionar ou sair de uma vaga de estacionamento o sistema deverá atualizar a contagem de vagas"/>
+      <composition name="Mostrar Contagem de Vagas" text="O sistema deverá ser capaz de mostrar ao usuário um contador de vagas disponíveis em um painel"/>
+    </composition>
+    <composition name="Controle do Sistema">
+      <composition name="Construção de Relatórios" text="O sistema deve permitir aos gerentes gerar relatórios do uso do estacionamento" derive="//@requirements[name='Relatório%20Diário'] //@requirements[name='Relatório%20Semanal'] //@requirements[name='Relatório%20Mensal']"/>
+      <composition name="Construção de Gráfios" text="O sistema deve permitir aos gerentes gerar gráficos do uso do estacionamento" derive="//@requirements[name='Gráfico%20Semanal'] //@requirements[name='Gráfico%20Diário'] //@requirements[name='Gráfico%20Mensal']"/>
+    </composition>
+  </requirements>
 </sysADL_Sintax:Model>
