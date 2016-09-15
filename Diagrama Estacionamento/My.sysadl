@@ -63,14 +63,37 @@
     <architectures xsi:type="sysADL_Sintax:SimplePortDef" name="ContadorOPT" flowProperties="out">
       <flowType name="" definition="//@packages[name='SysADL.types']/@architectures.0"/>
     </architectures>
+    <architectures xsi:type="sysADL_Sintax:SimplePortDef" name="ImpressoraIPT">
+      <flowType definition="//@packages[name='SysADL.types']/@architectures.1"/>
+    </architectures>
+    <architectures xsi:type="sysADL_Sintax:SimplePortDef" name="ImpressoraOPT" flowProperties="out">
+      <flowType name="" definition="//@packages[name='Tipos']/@architectures.5"/>
+    </architectures>
   </packages>
-  <packages name="Conectores"/>
+  <packages name="Conectores">
+    <architectures xsi:type="sysADL_Sintax:ConnectorDef" name="TicketCancelaCN">
+      <ports name="c1" definition="//@packages[name='Portas']/@architectures.0"/>
+      <ports name="c2" definition="//@packages[name='Portas']/@architectures.1"/>
+      <flows flowType="//@packages[name='SysADL.types']/@architectures.1" source="//@packages[name='Conectores']/@architectures.0/@ports.0" destination="//@packages[name='Conectores']/@architectures.0/@ports.1"/>
+    </architectures>
+    <architectures xsi:type="sysADL_Sintax:ConnectorDef" name="PresençaTicketCN">
+      <ports name="p1" definition="//@packages[name='Portas']/@architectures.3"/>
+      <ports name="i1" definition="//@packages[name='Portas']/@architectures.14"/>
+      <flows flowType="//@packages[name='SysADL.types']/@architectures.1" source="//@packages[name='Conectores']/@architectures.1/@ports.0" destination="//@packages[name='Conectores']/@architectures.1/@ports.1"/>
+    </architectures>
+    <architectures xsi:type="sysADL_Sintax:ConnectorDef" name="PresençaLampadaCN">
+      <ports name="p1" definition="//@packages[name='Portas']/@architectures.3"/>
+      <ports name="l1" definition="//@packages[name='Portas']/@architectures.4"/>
+      <flows flowType="//@packages[name='SysADL.types']/@architectures.1" source="//@packages[name='Conectores']/@architectures.2/@ports.0" destination="//@packages[name='Conectores']/@architectures.2/@ports.1"/>
+    </architectures>
+  </packages>
   <packages name="Tipos">
     <architectures xsi:type="sysADL_Sintax:ValueTypeDef" name="Cartão"/>
     <architectures xsi:type="sysADL_Sintax:ValueTypeDef" name="Veículo"/>
     <architectures xsi:type="sysADL_Sintax:ValueTypeDef" name="Code"/>
     <architectures xsi:type="sysADL_Sintax:ValueTypeDef" name="QrCode" superType="//@packages[name='Tipos']/@architectures.2"/>
     <architectures xsi:type="sysADL_Sintax:ValueTypeDef" name="BarCode" superType="//@packages[name='Tipos']/@architectures.2"/>
+    <architectures xsi:type="sysADL_Sintax:ValueTypeDef" name="Papel"/>
   </packages>
   <requirements name="Relatório Mensal"/>
   <requirements name="Relatório Semanal"/>
