@@ -72,7 +72,7 @@
   </packages>
   <packages name="Conectores">
     <architectures xsi:type="sysADL_Sintax:ConnectorDef" name="TicketCancelaCN">
-      <ports name="c1" definition="//@packages[name='Portas']/@architectures.0"/>
+      <ports name="i1" definition="//@packages[name='Portas']/@architectures.15"/>
       <ports name="c2" definition="//@packages[name='Portas']/@architectures.1"/>
       <flows flowType="//@packages[name='SysADL.types']/@architectures.1" source="//@packages[name='Conectores']/@architectures.0/@ports.0" destination="//@packages[name='Conectores']/@architectures.0/@ports.1"/>
     </architectures>
@@ -86,6 +86,22 @@
       <ports name="l1" definition="//@packages[name='Portas']/@architectures.4"/>
       <flows flowType="//@packages[name='SysADL.types']/@architectures.1" source="//@packages[name='Conectores']/@architectures.2/@ports.0" destination="//@packages[name='Conectores']/@architectures.2/@ports.1"/>
     </architectures>
+    <architectures xsi:type="sysADL_Sintax:ConnectorDef" name="PresençaContadorCN">
+      <ports name="p1" definition="//@packages[name='Portas']/@architectures.3"/>
+      <ports name="c1" definition="//@packages[name='Portas']/@architectures.12"/>
+      <flows flowType="//@packages[name='SysADL.types']/@architectures.1" source="//@packages[name='Conectores']/@architectures.3/@ports.0" destination="//@packages[name='Conectores']/@architectures.3/@ports.1"/>
+    </architectures>
+    <architectures xsi:type="sysADL_Sintax:ConnectorDef" name="ContadorPainelCN">
+      <ports name="c1" definition="//@packages[name='Portas']/@architectures.13"/>
+      <ports name="p1" definition="//@packages[name='Portas']/@architectures.11"/>
+      <flows flowType="//@packages[name='SysADL.types']/@architectures.0" source="//@packages[name='Conectores']/@architectures.4/@ports.0" destination="//@packages[name='Conectores']/@architectures.4/@ports.1"/>
+    </architectures>
+    <architectures xsi:type="sysADL_Sintax:ConnectorDef" name="PagamentoCancelaCN">
+      <ports name="p1" definition="//@packages[name='Portas']/@architectures.7"/>
+      <ports name="c1" definition="//@packages[name='Portas']/@architectures.1"/>
+      <flows flowType="//@packages[name='SysADL.types']/@architectures.1" source="//@packages[name='Conectores']/@architectures.5/@ports.0" destination="//@packages[name='Conectores']/@architectures.5/@ports.1"/>
+    </architectures>
+    <architectures xsi:type="sysADL_Sintax:ConnectorDef" name="newConnector"/>
   </packages>
   <packages name="Tipos">
     <architectures xsi:type="sysADL_Sintax:ValueTypeDef" name="Cartão"/>
