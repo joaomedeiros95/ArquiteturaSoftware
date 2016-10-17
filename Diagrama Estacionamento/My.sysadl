@@ -8,36 +8,42 @@
     <architectures xsi:type="sysADL_Sintax:DataTypeDef" name="Real"/>
   </packages>
   <packages name="Componentes">
-    <architectures xsi:type="sysADL_Sintax:ComponentDef" name="Impressora"/>
-    <architectures xsi:type="sysADL_Sintax:ComponentDef" name="Banco de Dados"/>
-    <architectures xsi:type="sysADL_Sintax:ComponentDef" name="Cancela"/>
-    <architectures xsi:type="sysADL_Sintax:ComponentDef" name="Leitor QrCode"/>
-    <architectures xsi:type="sysADL_Sintax:ComponentDef" name="Pagamento"/>
-    <architectures xsi:type="sysADL_Sintax:ComponentDef" name="Lâmpada"/>
-    <architectures xsi:type="sysADL_Sintax:ComponentDef" name="Sensor Presença"/>
-    <architectures xsi:type="sysADL_Sintax:ComponentDef" name="Painel"/>
-    <architectures xsi:type="sysADL_Sintax:ComponentDef" name="Contador Vagas"/>
-    <architectures xsi:type="sysADL_Sintax:ComponentDef" name="Gerador Gráfico"/>
-    <architectures xsi:type="sysADL_Sintax:ComponentDef" name="Gerador Relatório"/>
+    <architectures xsi:type="sysADL_Sintax:ComponentDef" name="ImpressoraCP"/>
+    <architectures xsi:type="sysADL_Sintax:ComponentDef" name="BDCP"/>
+    <architectures xsi:type="sysADL_Sintax:ComponentDef" name="CancelaCP"/>
+    <architectures xsi:type="sysADL_Sintax:ComponentDef" name="QrCodeCP"/>
+    <architectures xsi:type="sysADL_Sintax:ComponentDef" name="PagamentoCP" modifier="boundary"/>
+    <architectures xsi:type="sysADL_Sintax:ComponentDef" name="LâmpadaCP" modifier="boundary"/>
+    <architectures xsi:type="sysADL_Sintax:ComponentDef" name="PresencaCP" modifier="boundary"/>
+    <architectures xsi:type="sysADL_Sintax:ComponentDef" name="PainelCP"/>
+    <architectures xsi:type="sysADL_Sintax:ComponentDef" name="ContadorCP"/>
+    <architectures xsi:type="sysADL_Sintax:ComponentDef" name="GráficoCP"/>
+    <architectures xsi:type="sysADL_Sintax:ComponentDef" name="RelatórioCP"/>
+    <architectures xsi:type="sysADL_Sintax:ComponentDef" name="Arquitetura" modifier="boundary">
+      <composite>
+        <connectors name="" definition="//@packages[name='Conectores']/@architectures.0">
+          <bindings/>
+        </connectors>
+        <connectors name="" definition="//@packages[name='Conectores']/@architectures.0">
+          <bindings/>
+        </connectors>
+      </composite>
+    </architectures>
+    <architectures xsi:type="sysADL_Sintax:ComponentDef" name="Controlador">
+      <composite>
+        <components name="bd" definition="//@packages[name='Componentes']/@architectures.1"/>
+      </composite>
+    </architectures>
   </packages>
   <packages name="Portas">
-    <architectures xsi:type="sysADL_Sintax:SimplePortDef" name="CancelaOPT" flowProperties="out">
-      <flowType name="sc1" definition="//@packages[name='SysADL.types']/@architectures.1"/>
-    </architectures>
     <architectures xsi:type="sysADL_Sintax:SimplePortDef" name="CancelaIPT">
       <flowType name="" definition="//@packages[name='SysADL.types']/@architectures.1"/>
     </architectures>
-    <architectures xsi:type="sysADL_Sintax:SimplePortDef" name="PresençaIPT">
-      <flowType name="" definition="//@packages[name='SysADL.types']/@architectures.1"/>
-    </architectures>
     <architectures xsi:type="sysADL_Sintax:SimplePortDef" name="PresençaOPT" flowProperties="out">
-      <flowType name="" definition="//@packages[name='SysADL.types']/@architectures.1"/>
+      <flowType name="" definition="//@packages[name='Tipos']/@architectures.6"/>
     </architectures>
     <architectures xsi:type="sysADL_Sintax:SimplePortDef" name="LampadaIPT">
-      <flowType name="" definition="//@packages[name='SysADL.types']/@architectures.1"/>
-    </architectures>
-    <architectures xsi:type="sysADL_Sintax:SimplePortDef" name="LampadaOPT" flowProperties="out">
-      <flowType definition="//@packages[name='SysADL.types']/@architectures.1"/>
+      <flowType name="" definition="//@packages[name='Tipos']/@architectures.6"/>
     </architectures>
     <architectures xsi:type="sysADL_Sintax:SimplePortDef" name="PagamentoIPT">
       <flowType name="" definition="//@packages[name='Tipos']/@architectures.0"/>
@@ -60,45 +66,39 @@
     <architectures xsi:type="sysADL_Sintax:SimplePortDef" name="ContadorIPT">
       <flowType name="" definition="//@packages[name='SysADL.types']/@architectures.1"/>
     </architectures>
-    <architectures xsi:type="sysADL_Sintax:SimplePortDef" name="ContadorOPT" flowProperties="out">
-      <flowType name="" definition="//@packages[name='SysADL.types']/@architectures.0"/>
-    </architectures>
     <architectures xsi:type="sysADL_Sintax:SimplePortDef" name="ImpressoraIPT">
       <flowType definition="//@packages[name='SysADL.types']/@architectures.1"/>
-    </architectures>
-    <architectures xsi:type="sysADL_Sintax:SimplePortDef" name="ImpressoraOPT" flowProperties="out">
-      <flowType name="" definition="//@packages[name='Tipos']/@architectures.5"/>
     </architectures>
   </packages>
   <packages name="Conectores">
     <architectures xsi:type="sysADL_Sintax:ConnectorDef" name="TicketCancelaCN">
-      <ports name="i1" definition="//@packages[name='Portas']/@architectures.15"/>
-      <ports name="c2" definition="//@packages[name='Portas']/@architectures.1"/>
+      <ports name="i1"/>
+      <ports name="c2" definition="//@packages[name='Portas']/@architectures.0"/>
       <flows flowType="//@packages[name='SysADL.types']/@architectures.1" source="//@packages[name='Conectores']/@architectures.0/@ports.0" destination="//@packages[name='Conectores']/@architectures.0/@ports.1"/>
     </architectures>
     <architectures xsi:type="sysADL_Sintax:ConnectorDef" name="PresençaTicketCN">
-      <ports name="p1" definition="//@packages[name='Portas']/@architectures.3"/>
-      <ports name="i1" definition="//@packages[name='Portas']/@architectures.14"/>
+      <ports name="p1" definition="//@packages[name='Portas']/@architectures.1"/>
+      <ports name="i1" definition="//@packages[name='Portas']/@architectures.10"/>
       <flows flowType="//@packages[name='SysADL.types']/@architectures.1" source="//@packages[name='Conectores']/@architectures.1/@ports.0" destination="//@packages[name='Conectores']/@architectures.1/@ports.1"/>
     </architectures>
     <architectures xsi:type="sysADL_Sintax:ConnectorDef" name="PresençaLampadaCN">
-      <ports name="p1" definition="//@packages[name='Portas']/@architectures.3"/>
-      <ports name="l1" definition="//@packages[name='Portas']/@architectures.4"/>
-      <flows flowType="//@packages[name='SysADL.types']/@architectures.1" source="//@packages[name='Conectores']/@architectures.2/@ports.0" destination="//@packages[name='Conectores']/@architectures.2/@ports.1"/>
+      <ports name="p1" definition="//@packages[name='Portas']/@architectures.1"/>
+      <ports name="l1" definition="//@packages[name='Portas']/@architectures.2"/>
+      <flows flowType="//@packages[name='Tipos']/@architectures.6" source="//@packages[name='Conectores']/@architectures.2/@ports.0" destination="//@packages[name='Conectores']/@architectures.2/@ports.1"/>
     </architectures>
     <architectures xsi:type="sysADL_Sintax:ConnectorDef" name="PresençaContadorCN">
-      <ports name="p1" definition="//@packages[name='Portas']/@architectures.3"/>
-      <ports name="c1" definition="//@packages[name='Portas']/@architectures.12"/>
+      <ports name="p1" definition="//@packages[name='Portas']/@architectures.1"/>
+      <ports name="c1" definition="//@packages[name='Portas']/@architectures.9"/>
       <flows flowType="//@packages[name='SysADL.types']/@architectures.1" source="//@packages[name='Conectores']/@architectures.3/@ports.0" destination="//@packages[name='Conectores']/@architectures.3/@ports.1"/>
     </architectures>
     <architectures xsi:type="sysADL_Sintax:ConnectorDef" name="ContadorPainelCN">
-      <ports name="c1" definition="//@packages[name='Portas']/@architectures.13"/>
-      <ports name="p1" definition="//@packages[name='Portas']/@architectures.11"/>
+      <ports name="c1"/>
+      <ports name="p1" definition="//@packages[name='Portas']/@architectures.8"/>
       <flows flowType="//@packages[name='SysADL.types']/@architectures.0" source="//@packages[name='Conectores']/@architectures.4/@ports.0" destination="//@packages[name='Conectores']/@architectures.4/@ports.1"/>
     </architectures>
     <architectures xsi:type="sysADL_Sintax:ConnectorDef" name="PagamentoCancelaCN">
-      <ports name="p1" definition="//@packages[name='Portas']/@architectures.7"/>
-      <ports name="c1" definition="//@packages[name='Portas']/@architectures.1"/>
+      <ports name="p1" definition="//@packages[name='Portas']/@architectures.4"/>
+      <ports name="c1" definition="//@packages[name='Portas']/@architectures.0"/>
       <flows flowType="//@packages[name='SysADL.types']/@architectures.1" source="//@packages[name='Conectores']/@architectures.5/@ports.0" destination="//@packages[name='Conectores']/@architectures.5/@ports.1"/>
     </architectures>
     <architectures xsi:type="sysADL_Sintax:ConnectorDef" name="newConnector"/>
@@ -110,6 +110,12 @@
     <architectures xsi:type="sysADL_Sintax:ValueTypeDef" name="QrCode" superType="//@packages[name='Tipos']/@architectures.2"/>
     <architectures xsi:type="sysADL_Sintax:ValueTypeDef" name="BarCode" superType="//@packages[name='Tipos']/@architectures.2"/>
     <architectures xsi:type="sysADL_Sintax:ValueTypeDef" name="Papel"/>
+    <architectures xsi:type="sysADL_Sintax:Enumeration" name="Cor">
+      <literals key="Vermelho"/>
+      <literals key="Amarelo"/>
+      <literals key="Verde"/>
+      <literals key="Azul"/>
+    </architectures>
   </packages>
   <requirements name="Relatório Mensal"/>
   <requirements name="Relatório Semanal"/>
