@@ -116,6 +116,7 @@
     <architectures xsi:type="sysADL_Sintax:ComponentDef" name="ControladorCP">
       <composite/>
     </architectures>
+    <architectures xsi:type="sysADL_Sintax:ComponentDef" name="VagaCP"/>
   </packages>
   <packages name="Portas">
     <architectures xsi:type="sysADL_Sintax:SimplePortDef" name="CancelaIPT">
