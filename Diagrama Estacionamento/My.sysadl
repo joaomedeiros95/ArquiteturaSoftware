@@ -41,6 +41,7 @@
           <ports definition="//@packages[name='Portas']/@architectures.6"/>
           <ports definition="//@packages[name='Portas']/@architectures.4"/>
           <ports definition="//@packages[name='Portas']/@architectures.13"/>
+          <ports name="" definition="//@packages[name='Portas']/@architectures.9"/>
         </components>
         <components name="caSaida" definition="//@packages[name='Componentes']/@architectures.2">
           <ports definition="//@packages[name='Portas']/@architectures.0"/>
@@ -62,6 +63,9 @@
         </components>
         <components name="caEntrada" definition="//@packages[name='Componentes']/@architectures.2">
           <ports definition="//@packages[name='Portas']/@architectures.0"/>
+        </components>
+        <components name="cv1" definition="//@packages[name='Componentes']/@architectures.14">
+          <ports definition="//@packages[name='Portas']/@architectures.16"/>
         </components>
         <connectors name="" definition="//@packages[name='Conectores']/@architectures.0">
           <bindings/>
@@ -111,12 +115,25 @@
         <connectors name="cc1" definition="//@packages[name='Conectores']/@architectures.0">
           <bindings/>
         </connectors>
+        <connectors name="vco" definition="//@packages[name='Conectores']/@architectures.7">
+          <bindings firstPort="//@packages[name='Componentes']/@architectures.11/@composite/@components.11/@ports.0" secondPort="//@packages[name='Componentes']/@architectures.11/@composite/@components.3/@ports.10"/>
+        </connectors>
       </composite>
     </architectures>
     <architectures xsi:type="sysADL_Sintax:ComponentDef" name="ControladorCP">
       <composite/>
     </architectures>
     <architectures xsi:type="sysADL_Sintax:ComponentDef" name="VagaCP"/>
+    <architectures xsi:type="sysADL_Sintax:ComponentDef" name="ControladorVagasCP">
+      <ports name="p1" definition="//@packages[name='Portas']/@architectures.11"/>
+      <ports name="p2" definition="//@packages[name='Portas']/@architectures.11"/>
+      <ports name="p3" definition="//@packages[name='Portas']/@architectures.11"/>
+      <ports name="pa1" definition="//@packages[name='Portas']/@architectures.16"/>
+      <ports name="l1" definition="//@packages[name='Portas']/@architectures.12"/>
+      <ports name="l2" definition="//@packages[name='Portas']/@architectures.12"/>
+      <ports name="l3" definition="//@packages[name='Portas']/@architectures.12"/>
+      <composite/>
+    </architectures>
   </packages>
   <packages name="Portas">
     <architectures xsi:type="sysADL_Sintax:SimplePortDef" name="CancelaIPT">
@@ -147,7 +164,7 @@
       <flowType name="" definition="//@packages[name='Tipos']/@architectures.7"/>
     </architectures>
     <architectures xsi:type="sysADL_Sintax:SimplePortDef" name="ContadorIPT">
-      <flowType name="" definition="//@packages[name='SysADL.types']/@architectures.1"/>
+      <flowType name="" definition="//@packages[name='SysADL.types']/@architectures.0"/>
     </architectures>
     <architectures xsi:type="sysADL_Sintax:SimplePortDef" name="ImpressoraIPT">
       <flowType definition="//@packages[name='Tipos']/@architectures.5"/>
@@ -168,7 +185,7 @@
       <flowType definition="//@packages[name='Tipos']/@architectures.7"/>
     </architectures>
     <architectures xsi:type="sysADL_Sintax:SimplePortDef" name="ContadorOPT" flowProperties="out">
-      <flowType definition="//@packages[name='Tipos']/@architectures.7"/>
+      <flowType name="" definition="//@packages[name='SysADL.types']/@architectures.0"/>
     </architectures>
   </packages>
   <packages name="Conectores">
@@ -206,6 +223,11 @@
       <ports definition="//@packages[name='Portas']/@architectures.7"/>
       <ports definition="//@packages[name='Portas']/@architectures.6"/>
       <flows flowType="//@packages[name='Tipos']/@architectures.3" source="//@packages[name='Conectores']/@architectures.6/@ports.0" destination="//@packages[name='Conectores']/@architectures.6/@ports.1"/>
+    </architectures>
+    <architectures xsi:type="sysADL_Sintax:ConnectorDef" name="VagasControladorCN">
+      <ports definition="//@packages[name='Portas']/@architectures.16"/>
+      <ports definition="//@packages[name='Portas']/@architectures.9"/>
+      <flows source="//@packages[name='Conectores']/@architectures.7/@ports.0" destination="//@packages[name='Conectores']/@architectures.7/@ports.1"/>
     </architectures>
   </packages>
   <packages name="Tipos">
