@@ -130,6 +130,14 @@
       </composite>
     </architectures>
     <architectures xsi:type="sysADL_Sintax:ComponentDef" name="ControladorCP">
+      <ports name="c1" definition="//@packages[name='Portas']/@architectures.13"/>
+      <ports name="c2" definition="//@packages[name='Portas']/@architectures.13"/>
+      <ports name="p4" definition="//@packages[name='Portas']/@architectures.11"/>
+      <ports name="co1" definition="//@packages[name='Portas']/@architectures.9"/>
+      <ports name="le1" definition="//@packages[name='Portas']/@architectures.6"/>
+      <ports name="pai1" definition="//@packages[name='Portas']/@architectures.15"/>
+      <ports name="pag1" definition="//@packages[name='Portas']/@architectures.4"/>
+      <ports name="imp1" definition="//@packages[name='Portas']/@architectures.14"/>
       <composite/>
     </architectures>
     <architectures xsi:type="sysADL_Sintax:ComponentDef" name="VagaCP"/>
