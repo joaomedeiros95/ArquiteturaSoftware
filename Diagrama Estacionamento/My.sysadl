@@ -106,9 +106,6 @@
         <connectors name="lc1" definition="//@packages[name='Conectores']/@architectures.6">
           <bindings firstPort="//@packages[name='Componentes']/@architectures.11/@composite/@components.5/@ports.0" secondPort="//@packages[name='Componentes']/@architectures.11/@composite/@components.0/@ports.4"/>
         </connectors>
-        <connectors name="pc1" definition="//@packages[name='Conectores']/@architectures.4">
-          <bindings firstPort="//@packages[name='Componentes']/@architectures.11/@composite/@components.6/@ports.0" secondPort="//@packages[name='Componentes']/@architectures.11/@composite/@components.0/@ports.5"/>
-        </connectors>
         <connectors name="cc2" definition="//@packages[name='Conectores']/@architectures.0">
           <bindings firstPort="//@packages[name='Componentes']/@architectures.11/@composite/@components.7/@ports.0" secondPort="//@packages[name='Componentes']/@architectures.11/@composite/@components.0/@ports.6"/>
         </connectors>
@@ -127,6 +124,9 @@
         <connectors name="vl3" definition="//@packages[name='Conectores']/@architectures.2">
           <bindings firstPort="//@packages[name='Componentes']/@architectures.11/@composite/@components.11/@ports.0" secondPort="//@packages[name='Componentes']/@architectures.11/@composite/@components.8/@ports.3"/>
         </connectors>
+        <connectors name="pc1" definition="//@packages[name='Conectores']/@architectures.4">
+          <bindings firstPort="//@packages[name='Componentes']/@architectures.11/@composite/@components.0/@ports.5" secondPort="//@packages[name='Componentes']/@architectures.11/@composite/@components.6/@ports.0"/>
+        </connectors>
       </composite>
     </architectures>
     <architectures xsi:type="sysADL_Sintax:ComponentDef" name="ControladorCP">
@@ -138,9 +138,24 @@
       <ports name="pai1" definition="//@packages[name='Portas']/@architectures.15"/>
       <ports name="pag1" definition="//@packages[name='Portas']/@architectures.4"/>
       <ports name="imp1" definition="//@packages[name='Portas']/@architectures.14"/>
-      <composite/>
+      <composite>
+        <components name="cp1" definition="//@packages[name='Componentes']/@architectures.16">
+          <ports definition="//@packages[name='Portas']/@architectures.13"/>
+          <ports definition="//@packages[name='Portas']/@architectures.11"/>
+          <ports definition="//@packages[name='Portas']/@architectures.14"/>
+        </components>
+        <components name="cv" definition="//@packages[name='Componentes']/@architectures.13">
+          <ports definition="//@packages[name='Portas']/@architectures.9"/>
+          <ports definition="//@packages[name='Portas']/@architectures.15"/>
+        </components>
+        <delegations portProxy="//@packages[name='Componentes']/@architectures.12/@ports.2" fullPort="//@packages[name='Componentes']/@architectures.12/@composite/@components.0/@ports.1"/>
+        <delegations portProxy="//@packages[name='Componentes']/@architectures.12/@ports.0" fullPort="//@packages[name='Componentes']/@architectures.12/@composite/@components.0/@ports.0"/>
+        <delegations portProxy="//@packages[name='Componentes']/@architectures.12/@ports.7" fullPort="//@packages[name='Componentes']/@architectures.12/@composite/@components.0/@ports.2"/>
+        <delegations portProxy="//@packages[name='Componentes']/@architectures.12/@ports.3" fullPort="//@packages[name='Componentes']/@architectures.12/@composite/@components.1/@ports.0"/>
+        <delegations portProxy="//@packages[name='Componentes']/@architectures.12/@ports.5" fullPort="//@packages[name='Componentes']/@architectures.12/@composite/@components.1/@ports.1"/>
+      </composite>
     </architectures>
-    <architectures xsi:type="sysADL_Sintax:ComponentDef" name="VagaCP"/>
+    <architectures xsi:type="sysADL_Sintax:ComponentDef" name="CalculateVagasCP"/>
     <architectures xsi:type="sysADL_Sintax:ComponentDef" name="ControladorVagasCP">
       <ports name="p1" definition="//@packages[name='Portas']/@architectures.11"/>
       <ports name="p2" definition="//@packages[name='Portas']/@architectures.11"/>
@@ -177,6 +192,7 @@
       </composite>
     </architectures>
     <architectures xsi:type="sysADL_Sintax:ComponentDef" name="ControladorLampadaCP"/>
+    <architectures xsi:type="sysADL_Sintax:ComponentDef" name="CheckPresençaCP"/>
   </packages>
   <packages name="Portas">
     <architectures xsi:type="sysADL_Sintax:SimplePortDef" name="CancelaIPT">
