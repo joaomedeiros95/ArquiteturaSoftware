@@ -348,26 +348,23 @@
       <delegations source="//@packages[name='Atividades']/@architectures.1/@inParameters.2" target="//@packages[name='Equacoes']/@architectures.0/@paramIn.2"/>
       <delegations source="//@packages[name='Atividades']/@architectures.1" target="//@packages[name='Equacoes']/@architectures.0/@paramOut.0"/>
     </architectures>
-    <architectures xsi:type="sysADL_Sintax:ActivityDef" name="DeterminaCorAC">
-      <inParameters name="tipo" definition="//@packages[name='Tipos']/@architectures.8"/>
+    <architectures xsi:type="sysADL_Sintax:ActivityDef" name="AcenderLampadaAC">
       <inParameters name="presence" definition="//@packages[name='SysADL.types']/@architectures.1"/>
-      <outParameters name="cor" definition="//@packages[name='Tipos']/@architectures.6"/>
+      <outParameters name="aceso" definition="//@packages[name='SysADL.types']/@architectures.1"/>
       <acbody>
         <actions name="DeterminaCorAN" definition="//@packages[name='Atividades']/@architectures.3">
           <pinIn pinName="//@packages[name='Atividades']/@architectures.3/@inParameters.0"/>
-          <pinIn pinName="//@packages[name='Atividades']/@architectures.3/@inParameters.1"/>
         </actions>
+        <flows xsi:type="sysADL_Sintax:ActivityDelegation"/>
         <flows xsi:type="sysADL_Sintax:ActivityDelegation" source="//@packages[name='Atividades']/@architectures.2/@inParameters.0" target="//@packages[name='Atividades']/@architectures.2/@acbody/@actions[name='DeterminaCorAN']/@pinIn.0"/>
-        <flows xsi:type="sysADL_Sintax:ActivityDelegation" source="//@packages[name='Atividades']/@architectures.2/@inParameters.1" target="//@packages[name='Atividades']/@architectures.2/@acbody/@actions[name='DeterminaCorAN']/@pinIn.1"/>
         <flows xsi:type="sysADL_Sintax:ActivityDelegation" source="//@packages[name='Atividades']/@architectures.2/@outParameters.0" target="//@packages[name='Atividades']/@architectures.2/@acbody/@actions[name='DeterminaCorAN']"/>
       </acbody>
     </architectures>
-    <architectures xsi:type="sysADL_Sintax:ActionDef" name="DeterminaCorAN" returnType="//@packages[name='Tipos']/@architectures.6">
-      <inParameters name="tipo" definition="//@packages[name='Tipos']/@architectures.8"/>
+    <architectures xsi:type="sysADL_Sintax:ActionDef" name="AcenderLampadaAN" returnType="//@packages[name='SysADL.types']/@architectures.1">
       <inParameters name="presence" definition="//@packages[name='SysADL.types']/@architectures.1"/>
-      <constraints definition="//@packages[name='Equacoes']/@architectures.1" params="//@packages[name='Atividades']/@architectures.2/@inParameters.0 //@packages[name='Atividades']/@architectures.2/@inParameters.1"/>
+      <constraints definition="//@packages[name='Equacoes']/@architectures.1" params="//@packages[name='Atividades']/@architectures.2/@inParameters.0"/>
+      <delegations/>
       <delegations source="//@packages[name='Atividades']/@architectures.3/@inParameters.0" target="//@packages[name='Equacoes']/@architectures.1/@paramIn.0"/>
-      <delegations source="//@packages[name='Atividades']/@architectures.3/@inParameters.1" target="//@packages[name='Equacoes']/@architectures.1/@paramIn.1"/>
       <delegations source="//@packages[name='Atividades']/@architectures.3" target="//@packages[name='Equacoes']/@architectures.1/@paramOut.0"/>
     </architectures>
   </packages>
@@ -379,13 +376,13 @@
       <paramOut xsi:type="sysADL_Sintax:Pin" name="resultado" definition="//@packages[name='Tipos']/@architectures.7"/>
       <equation value="{resultado = (sp1 ? 0 : 1) + (sp2 ? 0 : 1) + (sp3 ? 0 : 1)}"/>
     </architectures>
-    <architectures xsi:type="sysADL_Sintax:ConstraintDef" name="DeterminaCorEQ">
-      <paramIn xsi:type="sysADL_Sintax:Pin" name="tipo" definition="//@packages[name='Tipos']/@architectures.8"/>
+    <architectures xsi:type="sysADL_Sintax:ConstraintDef" name="AcenderLampadaEQ">
       <paramIn xsi:type="sysADL_Sintax:Pin" name="presence" definition="//@packages[name='SysADL.types']/@architectures.1"/>
-      <paramOut xsi:type="sysADL_Sintax:Pin" name="cor" definition="//@packages[name='Tipos']/@architectures.6"/>
-      <equation value="if(presence == true) { cor = Cor::Vermelho } else if(tipo == TipoVaga::Idoso) { cor = Cor::Amarelo } else  if(tipo == TipoVaga::Deficiente) { cor = Cor::Azul } else { cor = Cor::Verde }"/>
+      <paramOut xsi:type="sysADL_Sintax:Pin" name="aceso" definition="//@packages[name='SysADL.types']/@architectures.1"/>
+      <equation value="{if presence then aceso = true else aceso = false}"/>
     </architectures>
   </packages>
+  <packages name="Executavel"/>
   <requirements name="Relatório Mensal"/>
   <requirements name="Relatório Semanal"/>
   <requirements name="Relatório Diário"/>
