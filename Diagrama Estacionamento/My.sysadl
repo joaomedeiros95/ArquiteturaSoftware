@@ -47,7 +47,7 @@
           <ports definition="//@packages[name='Portas']/@architectures.7"/>
         </components>
         <components name="pag1" definition="//@packages[name='Componentes']/@architectures.4">
-          <ports definition="//@packages[name='Portas']/@architectures.17"/>
+          <ports definition="//@packages[name='Portas']/@architectures.20"/>
         </components>
         <components name="caEntrada" definition="//@packages[name='Componentes']/@architectures.2">
           <ports definition="//@packages[name='Portas']/@architectures.0"/>
@@ -126,6 +126,9 @@
         </connectors>
         <connectors name="vl3" definition="//@packages[name='Conectores']/@architectures.2">
           <bindings firstPort="//@packages[name='Componentes']/@architectures.11/@composite/@components.8/@ports.3" secondPort="//@packages[name='Componentes']/@architectures.11/@composite/@components.11/@ports.0"/>
+        </connectors>
+        <connectors name="pc1" definition="//@packages[name='Conectores']/@architectures.4">
+          <bindings firstPort="//@packages[name='Componentes']/@architectures.11/@composite/@components.0/@ports.7"/>
         </connectors>
         <connectors name="pc1" definition="//@packages[name='Conectores']/@architectures.4">
           <bindings firstPort="//@packages[name='Componentes']/@architectures.11/@composite/@components.0/@ports.7" secondPort="//@packages[name='Componentes']/@architectures.11/@composite/@components.6/@ports.0"/>
@@ -214,10 +217,10 @@
     <architectures xsi:type="sysADL_Sintax:SimplePortDef" name="LampadaIPT">
       <flowType name="" definition="//@packages[name='SysADL.types']/@architectures.1"/>
     </architectures>
-    <architectures xsi:type="sysADL_Sintax:SimplePortDef" name="PagamentoIPT">
+    <architectures xsi:type="sysADL_Sintax:SimplePortDef" name="ValorOPT" flowProperties="out">
       <flowType name="" definition="//@packages[name='SysADL.types']/@architectures.4"/>
     </architectures>
-    <architectures xsi:type="sysADL_Sintax:SimplePortDef" name="PagamentoOPT" flowProperties="out">
+    <architectures xsi:type="sysADL_Sintax:SimplePortDef" name="PagouIPT">
       <flowType definition="//@packages[name='SysADL.types']/@architectures.1"/>
     </architectures>
     <architectures xsi:type="sysADL_Sintax:SimplePortDef" name="BDIPT">
@@ -256,9 +259,19 @@
     <architectures xsi:type="sysADL_Sintax:SimplePortDef" name="ContadorOPT" flowProperties="out">
       <flowType name="" definition="//@packages[name='SysADL.types']/@architectures.0"/>
     </architectures>
-    <architectures xsi:type="sysADL_Sintax:CompositePortDef" name="Pagamento">
+    <architectures xsi:type="sysADL_Sintax:CompositePortDef" name="PagamentoOPT">
       <ports name="valor" definition="//@packages[name='Portas']/@architectures.3"/>
       <ports name="pagou" definition="//@packages[name='Portas']/@architectures.4"/>
+    </architectures>
+    <architectures xsi:type="sysADL_Sintax:SimplePortDef" name="PagouOPT" flowProperties="out">
+      <flowType definition="//@packages[name='SysADL.types']/@architectures.1"/>
+    </architectures>
+    <architectures xsi:type="sysADL_Sintax:SimplePortDef" name="ValorIPT">
+      <flowType/>
+    </architectures>
+    <architectures xsi:type="sysADL_Sintax:CompositePortDef" name="PagamentoIPT">
+      <ports name="valor" definition="//@packages[name='Portas']/@architectures.19"/>
+      <ports name="pagou" definition="//@packages[name='Portas']/@architectures.18"/>
     </architectures>
   </packages>
   <packages name="Conectores">
@@ -283,8 +296,9 @@
       <flows flowType="//@packages[name='Tipos']/@architectures.7" source="//@packages[name='Conectores']/@architectures.3/@ports.0" destination="//@packages[name='Conectores']/@architectures.3/@ports.1"/>
     </architectures>
     <architectures xsi:type="sysADL_Sintax:ConnectorDef" name="PagamentoControladorCN">
-      <ports name="p1" definition="//@packages[name='Portas']/@architectures.17"/>
-      <ports name="c1" definition="//@packages[name='Portas']/@architectures.17"/>
+      <ports name="" definition="//@packages[name='Portas']/@architectures.17"/>
+      <ports definition="//@packages[name='Portas']/@architectures.20"/>
+      <flows flowType="//@packages[name='SysADL.types']/@architectures.4"/>
       <flows flowType="//@packages[name='SysADL.types']/@architectures.4" source="//@packages[name='Conectores']/@architectures.4/@ports.0" destination="//@packages[name='Conectores']/@architectures.4/@ports.1"/>
     </architectures>
     <architectures xsi:type="sysADL_Sintax:ConnectorDef" name="PresençaControladorCN">
