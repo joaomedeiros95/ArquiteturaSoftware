@@ -160,9 +160,6 @@
         <components name="bd1" definition="//@packages[name='Componentes']/@architectures.1">
           <ports definition="//@packages[name='Portas']/@architectures.5"/>
         </components>
-        <components name="bd2" definition="//@packages[name='Componentes']/@architectures.1">
-          <ports definition="//@packages[name='Portas']/@architectures.5"/>
-        </components>
         <components name="qbd1" definition="//@packages[name='Componentes']/@architectures.17">
           <ports definition="//@packages[name='Portas']/@architectures.5"/>
           <ports definition="//@packages[name='Portas']/@architectures.24"/>
@@ -179,11 +176,11 @@
         <delegations/>
         <delegations/>
         <delegations portProxy="//@packages[name='Componentes']/@architectures.11/@ports.0" fullPort="//@packages[name='Componentes']/@architectures.11/@composite/@components.0/@ports.0"/>
-        <delegations portProxy="//@packages[name='Componentes']/@architectures.11/@ports.0" fullPort="//@packages[name='Componentes']/@architectures.11/@composite/@components.1/@ports.0"/>
-        <delegations portProxy="//@packages[name='Portas']/@architectures.23/@ports.0" fullPort="//@packages[name='Componentes']/@architectures.11/@composite/@components.2/@ports.0"/>
-        <delegations portProxy="//@packages[name='Portas']/@architectures.23/@ports.1" fullPort="//@packages[name='Componentes']/@architectures.11/@composite/@components.2/@ports.1"/>
-        <delegations portProxy="//@packages[name='Componentes']/@architectures.11/@ports.3" fullPort="//@packages[name='Componentes']/@architectures.11/@composite/@components.3/@ports.0"/>
-        <delegations portProxy="//@packages[name='Componentes']/@architectures.11/@ports.2" fullPort="//@packages[name='Componentes']/@architectures.11/@composite/@components.3/@ports.1"/>
+        <delegations portProxy="//@packages[name='Componentes']/@architectures.11/@ports.0"/>
+        <delegations portProxy="//@packages[name='Portas']/@architectures.23/@ports.0" fullPort="//@packages[name='Componentes']/@architectures.11/@composite/@components.1/@ports.0"/>
+        <delegations portProxy="//@packages[name='Portas']/@architectures.23/@ports.1" fullPort="//@packages[name='Componentes']/@architectures.11/@composite/@components.1/@ports.1"/>
+        <delegations portProxy="//@packages[name='Componentes']/@architectures.11/@ports.3" fullPort="//@packages[name='Componentes']/@architectures.11/@composite/@components.2/@ports.0"/>
+        <delegations portProxy="//@packages[name='Componentes']/@architectures.11/@ports.2" fullPort="//@packages[name='Componentes']/@architectures.11/@composite/@components.2/@ports.1"/>
         <connectors name="r1" definition="//@packages[name='Conectores']/@architectures.7">
           <bindings/>
         </connectors>
