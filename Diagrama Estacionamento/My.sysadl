@@ -146,7 +146,7 @@
         <connectors name="con2" definition="//@packages[name='Conectores']/@architectures.11">
           <bindings firstPort="//@packages[name='Componentes']/@architectures.10/@composite/@components.9/@ports.0" secondPort="//@packages[name='Componentes']/@architectures.10/@composite/@components.0/@ports.2"/>
         </connectors>
-        <connectors name="r1" definition="//@packages[name='Conectores']/@architectures.7">
+        <connectors name="dad1" definition="//@packages[name='Conectores']/@architectures.7">
           <bindings firstPort="//@packages[name='Componentes']/@architectures.10/@composite/@components.0/@ports.3" secondPort="//@packages[name='Componentes']/@architectures.10/@composite/@components.10/@ports.0"/>
         </connectors>
       </composite>
@@ -365,11 +365,11 @@
     <architectures xsi:type="sysADL_Sintax:SimplePortDef" name="PresencaCancelaOPT" flowProperties="out">
       <flowType definition="//@packages[name='SysADL.types']/@architectures.1"/>
     </architectures>
-    <architectures xsi:type="sysADL_Sintax:SimplePortDef" name="RelatórioIPT">
-      <flowType definition="//@packages[name='Tipos']/@architectures.6"/>
+    <architectures xsi:type="sysADL_Sintax:SimplePortDef" name="DadosIPT">
+      <flowType definition="//@packages[name='Tipos']/@architectures.8"/>
     </architectures>
-    <architectures xsi:type="sysADL_Sintax:SimplePortDef" name="RelatorioOPT" flowProperties="out">
-      <flowType name="" definition="//@packages[name='Tipos']/@architectures.6"/>
+    <architectures xsi:type="sysADL_Sintax:SimplePortDef" name="DadosOPT" flowProperties="out">
+      <flowType name="" definition="//@packages[name='Tipos']/@architectures.8"/>
     </architectures>
     <architectures xsi:type="sysADL_Sintax:CompositePortDef" name="QueryBDComposite">
       <ports name="ticket" definition="//@packages[name='Portas']/@architectures.6"/>
@@ -424,10 +424,10 @@
       <ports definition="//@packages[name='Portas']/@architectures.0"/>
       <flows flowType="//@packages[name='SysADL.types']/@architectures.1" source="//@packages[name='Conectores']/@architectures.6/@ports.0" destination="//@packages[name='Conectores']/@architectures.6/@ports.1"/>
     </architectures>
-    <architectures xsi:type="sysADL_Sintax:ConnectorDef" name="RelatorioCN">
+    <architectures xsi:type="sysADL_Sintax:ConnectorDef" name="DadosCN">
       <ports definition="//@packages[name='Portas']/@architectures.22"/>
       <ports definition="//@packages[name='Portas']/@architectures.21"/>
-      <flows flowType="//@packages[name='Tipos']/@architectures.6" source="//@packages[name='Conectores']/@architectures.7/@ports.0" destination="//@packages[name='Conectores']/@architectures.7/@ports.1"/>
+      <flows flowType="//@packages[name='Tipos']/@architectures.8" source="//@packages[name='Conectores']/@architectures.7/@ports.0" destination="//@packages[name='Conectores']/@architectures.7/@ports.1"/>
     </architectures>
     <architectures xsi:type="sysADL_Sintax:ConnectorDef" name="BDCN">
       <ports definition="//@packages[name='Portas']/@architectures.18"/>
@@ -468,11 +468,16 @@
       <dataTypeAttributes name="entrada" definition="//@packages[name='Tipos']/@architectures.0"/>
       <dataTypeAttributes name="codigo" definition="//@packages[name='Tipos']/@architectures.1"/>
     </architectures>
-    <architectures xsi:type="sysADL_Sintax:DataTypeDef" name="Relatorio">
+    <architectures xsi:type="sysADL_Sintax:DataTypeDef" name="Relatorio" superType="//@packages[name='Tipos']/@architectures.8">
       <dataTypeAttributes name="quantidadeEntradas" definition="//@packages[name='SysADL.types']/@architectures.0"/>
       <dataTypeAttributes name="maiorPico" definition="//@packages[name='Tipos']/@architectures.0"/>
       <dataTypeAttributes name="lucro" definition="//@packages[name='SysADL.types']/@architectures.4"/>
     </architectures>
+    <architectures xsi:type="sysADL_Sintax:DataTypeDef" name="Grafico" superType="//@packages[name='Tipos']/@architectures.8">
+      <dataTypeAttributes name="eixox" definition="//@packages[name='SysADL.types']/@architectures.4"/>
+      <dataTypeAttributes name="eixoy" definition="//@packages[name='SysADL.types']/@architectures.4"/>
+    </architectures>
+    <architectures xsi:type="sysADL_Sintax:DataTypeDef" name="Dados"/>
   </packages>
   <packages name="Atividades">
     <architectures xsi:type="sysADL_Sintax:ActivityDef" name="PresencaLampadaAC">
@@ -538,6 +543,39 @@
       <inParameters name="entrada" definition="//@packages[name='Tipos']/@architectures.0"/>
       <constraints definition="//@packages[name='Equacoes']/@architectures.3"/>
     </architectures>
+    <architectures xsi:type="sysADL_Sintax:ActivityDef" name="GraficoAC">
+      <outParameters name="query" definition="//@packages[name='SysADL.types']/@architectures.2"/>
+      <acbody>
+        <actions name="GraficoAN" definition="//@packages[name='Atividades']/@architectures.9"/>
+        <flows xsi:type="sysADL_Sintax:ActivityDelegation" source="//@packages[name='Atividades']/@architectures.8/@outParameters.0" target="//@packages[name='Atividades']/@architectures.8/@acbody/@actions[name='GraficoAN']"/>
+      </acbody>
+    </architectures>
+    <architectures xsi:type="sysADL_Sintax:ActionDef" name="GraficoAN" returnType="//@packages[name='SysADL.types']/@architectures.2">
+      <constraints definition="//@packages[name='Equacoes']/@architectures.4"/>
+    </architectures>
+    <architectures xsi:type="sysADL_Sintax:ActivityDef" name="RelatorioAC">
+      <outParameters name="query" definition="//@packages[name='SysADL.types']/@architectures.2"/>
+      <acbody>
+        <actions name="RelatorioAN" definition="//@packages[name='Atividades']/@architectures.11"/>
+        <flows xsi:type="sysADL_Sintax:ActivityDelegation" source="//@packages[name='Atividades']/@architectures.10/@outParameters.0" target="//@packages[name='Atividades']/@architectures.10/@acbody/@actions[name='RelatorioAN']"/>
+      </acbody>
+    </architectures>
+    <architectures xsi:type="sysADL_Sintax:ActionDef" name="RelatorioAN" returnType="//@packages[name='SysADL.types']/@architectures.2"/>
+    <architectures xsi:type="sysADL_Sintax:ActivityDef" name="MontarDadosAC">
+      <inParameters name="dados" definition="//@packages[name='Tipos']/@architectures.8"/>
+      <outParameters name="resultado" definition="//@packages[name='SysADL.types']/@architectures.2"/>
+      <acbody>
+        <actions name="MontarDadosAN" definition="//@packages[name='Atividades']/@architectures.13">
+          <pinIn pinName="//@packages[name='Atividades']/@architectures.13/@inParameters.0"/>
+        </actions>
+        <flows xsi:type="sysADL_Sintax:ActivityDelegation" source="//@packages[name='Atividades']/@architectures.12/@inParameters.0" target="//@packages[name='Atividades']/@architectures.12/@acbody/@actions[name='MontarDadosAN']/@pinIn.0"/>
+        <flows xsi:type="sysADL_Sintax:ActivityDelegation" source="//@packages[name='Atividades']/@architectures.12/@outParameters.0" target="//@packages[name='Atividades']/@architectures.12/@acbody/@actions[name='MontarDadosAN']"/>
+      </acbody>
+    </architectures>
+    <architectures xsi:type="sysADL_Sintax:ActionDef" name="MontarDadosAN" returnType="//@packages[name='SysADL.types']/@architectures.2">
+      <inParameters name="dados" definition="//@packages[name='Tipos']/@architectures.8"/>
+      <constraints definition="//@packages[name='Equacoes']/@architectures.6"/>
+    </architectures>
   </packages>
   <packages name="Equacoes">
     <architectures xsi:type="sysADL_Sintax:ConstraintDef" name="PresencaLampadaEQ">
@@ -560,6 +598,19 @@
       <paramIn xsi:type="sysADL_Sintax:Pin" name="entrada" definition="//@packages[name='Tipos']/@architectures.0"/>
       <paramOut xsi:type="sysADL_Sintax:Pin" name="resultado" definition="//@packages[name='SysADL.types']/@architectures.4"/>
       <equation value="{resultado = (entrada - DataHora) * 2}"/>
+    </architectures>
+    <architectures xsi:type="sysADL_Sintax:ConstraintDef" name="GraficoEQ">
+      <paramOut xsi:type="sysADL_Sintax:Pin" name="query" definition="//@packages[name='SysADL.types']/@architectures.2"/>
+      <equation value="{query = &quot;querygrafico&quot;}"/>
+    </architectures>
+    <architectures xsi:type="sysADL_Sintax:ConstraintDef" name="RelatorioEQ">
+      <paramOut xsi:type="sysADL_Sintax:Pin" name="query" definition="//@packages[name='SysADL.types']/@architectures.2"/>
+      <equation value="{query = &quot;queryrelatorio&quot;}"/>
+    </architectures>
+    <architectures xsi:type="sysADL_Sintax:ConstraintDef" name="MontarDadosEQ">
+      <paramIn xsi:type="sysADL_Sintax:Pin" name="dados" definition="//@packages[name='Tipos']/@architectures.8"/>
+      <paramOut xsi:type="sysADL_Sintax:Pin" name="resultado" definition="//@packages[name='SysADL.types']/@architectures.2"/>
+      <equation value="{if dados = Relatorio then resultado = dados::quantidadeEntradas + dados::maiorPico + dados::lucro else resultado = dados::eixox + dados::eixoy}"/>
     </architectures>
   </packages>
   <packages name="Executavel"/>
