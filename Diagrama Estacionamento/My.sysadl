@@ -511,7 +511,7 @@
       </acbody>
     </architectures>
     <architectures xsi:type="sysADL_Sintax:ActionDef" name="ContadorVagasAN" returnType="//@packages[name='Tipos']/@architectures.4">
-      <inParameters name="ocupadas"/>
+      <inParameters name="ocupadas" definition="//@packages[name='SysADL.types']/@architectures.0"/>
       <constraints definition="//@packages[name='Equacoes']/@architectures.1"/>
     </architectures>
     <architectures xsi:type="sysADL_Sintax:ActivityDef" name="GerarDadosAC">
@@ -597,7 +597,7 @@
     <architectures xsi:type="sysADL_Sintax:ConstraintDef" name="CalculaValorEQ">
       <paramIn xsi:type="sysADL_Sintax:Pin" name="entrada" definition="//@packages[name='Tipos']/@architectures.0"/>
       <paramOut xsi:type="sysADL_Sintax:Pin" name="resultado" definition="//@packages[name='SysADL.types']/@architectures.4"/>
-      <equation value="{resultado = (entrada - DataHora) * 2}"/>
+      <equation value="{resultado = (entrada - new DataHora) * 2}"/>
     </architectures>
     <architectures xsi:type="sysADL_Sintax:ConstraintDef" name="GraficoEQ">
       <paramOut xsi:type="sysADL_Sintax:Pin" name="query" definition="//@packages[name='SysADL.types']/@architectures.2"/>
@@ -613,7 +613,48 @@
       <equation value="{if dados = Relatorio then resultado = dados::quantidadeEntradas + dados::maiorPico + dados::lucro else resultado = dados::eixox + dados::eixoy}"/>
     </architectures>
   </packages>
-  <packages name="Executavel"/>
+  <packages name="Executavel">
+    <architectures xsi:type="sysADL_Sintax:Executable" name="PresencaLampadaEX" associatedAction="//@packages[name='Atividades']/@architectures.1" returnType="//@packages[name='SysADL.types']/@architectures.0">
+      <actions xsi:type="sysADL_Sintax:Expression" value="if(ocupada) {"/>
+      <actions xsi:type="sysADL_Sintax:Expression" value="return ocupadas + 1;"/>
+      <actions xsi:type="sysADL_Sintax:Expression" value="}"/>
+      <actions xsi:type="sysADL_Sintax:Expression" value="else {"/>
+      <actions xsi:type="sysADL_Sintax:Expression" value="return ocupadas;"/>
+      <actions xsi:type="sysADL_Sintax:Expression" value="}"/>
+      <params name="ocupadas" definition="//@packages[name='SysADL.types']/@architectures.0"/>
+      <params name="ocupada" definition="//@packages[name='SysADL.types']/@architectures.1"/>
+    </architectures>
+    <architectures xsi:type="sysADL_Sintax:Executable" name="ContadorVagasEX" associatedAction="//@packages[name='Atividades']/@architectures.3" returnType="//@packages[name='Tipos']/@architectures.4">
+      <actions xsi:type="sysADL_Sintax:Expression" value="let qtdVagas = 3;"/>
+      <actions xsi:type="sysADL_Sintax:Expression" value="return new Painel(qtdVagas - ocupadas, ocupadas);"/>
+      <params name="ocupadas" definition="//@packages[name='SysADL.types']/@architectures.0"/>
+    </architectures>
+    <architectures xsi:type="sysADL_Sintax:Executable" name="GerarDadosEx" associatedAction="//@packages[name='Atividades']/@architectures.5" returnType="//@packages[name='Tipos']/@architectures.5">
+      <actions xsi:type="sysADL_Sintax:Expression" value="if(presenca) {"/>
+      <actions xsi:type="sysADL_Sintax:Expression" value="return new Ticket(new DataHora, new BarCode);"/>
+      <actions xsi:type="sysADL_Sintax:Expression" value="}"/>
+      <params name="presenca" definition="//@packages[name='SysADL.types']/@architectures.1"/>
+    </architectures>
+    <architectures xsi:type="sysADL_Sintax:Executable" name="CalculaValorEX" associatedAction="//@packages[name='Atividades']/@architectures.7" returnType="//@packages[name='SysADL.types']/@architectures.4">
+      <actions xsi:type="sysADL_Sintax:Expression" value="let valorPorHora = 2;"/>
+      <actions xsi:type="sysADL_Sintax:Expression" value="return (new DataHora - entrada) * valorPorHora;"/>
+      <params name="entrada" definition="//@packages[name='Tipos']/@architectures.0"/>
+    </architectures>
+    <architectures xsi:type="sysADL_Sintax:Executable" name="GraficoEX" associatedAction="//@packages[name='Atividades']/@architectures.9" returnType="//@packages[name='SysADL.types']/@architectures.2">
+      <actions xsi:type="sysADL_Sintax:Expression" value="return &quot;querygrafico&quot;;"/>
+    </architectures>
+    <architectures xsi:type="sysADL_Sintax:Executable" name="RelatorioEX" associatedAction="//@packages[name='Atividades']/@architectures.11" returnType="//@packages[name='SysADL.types']/@architectures.2">
+      <actions xsi:type="sysADL_Sintax:Expression" value="return &quot;queryrelatorio&quot;;"/>
+    </architectures>
+    <architectures xsi:type="sysADL_Sintax:Executable" name="MontarDadosEx" associatedAction="//@packages[name='Atividades']/@architectures.13" returnType="//@packages[name='SysADL.types']/@architectures.2">
+      <actions xsi:type="sysADL_Sintax:Expression" value="if(dados == Relatorio) {"/>
+      <actions xsi:type="sysADL_Sintax:Expression" value="return dados::quantidadeEntradas + dados::maiorPico + dados::lucro;"/>
+      <actions xsi:type="sysADL_Sintax:Expression" value="} else {"/>
+      <actions xsi:type="sysADL_Sintax:Expression" value="return dados::eixox + dados::eixoy;"/>
+      <actions xsi:type="sysADL_Sintax:Expression" value="}"/>
+      <params name="dados" definition="//@packages[name='Tipos']/@architectures.8"/>
+    </architectures>
+  </packages>
   <requirements name="Relatório Mensal"/>
   <requirements name="Relatório Semanal"/>
   <requirements name="Relatório Diário"/>
