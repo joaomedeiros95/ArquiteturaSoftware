@@ -16,7 +16,7 @@
     <architectures xsi:type="sysADL_Sintax:ComponentDef" name="PresencaCP" modifier="boundary">
       <ports name="" definition="//@packages[name='Portas']/@architectures.20"/>
     </architectures>
-    <architectures xsi:type="sysADL_Sintax:ComponentDef" name="PainelCP"/>
+    <architectures xsi:type="sysADL_Sintax:ComponentDef" name="PainelCP" modifier="boundary"/>
     <architectures xsi:type="sysADL_Sintax:ComponentDef" name="ContadorVagasCP"/>
     <architectures xsi:type="sysADL_Sintax:ComponentDef" name="GráficoCP"/>
     <architectures xsi:type="sysADL_Sintax:ComponentDef" name="RelatórioCP"/>
@@ -25,31 +25,42 @@
         <components name="d1" definition="//@packages[name='Componentes']/@architectures.11">
           <ports definition="//@packages[name='Portas']/@architectures.5"/>
           <ports definition="//@packages[name='Portas']/@architectures.23"/>
+          <ports definition="//@packages[name='Portas']/@architectures.27"/>
+          <ports definition="//@packages[name='Portas']/@architectures.22"/>
         </components>
         <components name="pan1" definition="//@packages[name='Componentes']/@architectures.6">
           <ports definition="//@packages[name='Portas']/@architectures.7"/>
         </components>
-        <components name="cv1" definition="//@packages[name='Componentes']/@architectures.13">
+        <components name="cv1" definition="//@packages[name='Componentes']/@architectures.12">
           <ports definition="//@packages[name='Portas']/@architectures.14"/>
           <ports definition="//@packages[name='Portas']/@architectures.10"/>
         </components>
-        <components name="pl1" definition="//@packages[name='Componentes']/@architectures.15">
+        <components name="pl1" definition="//@packages[name='Componentes']/@architectures.14">
           <ports definition="//@packages[name='Portas']/@architectures.10"/>
           <ports definition="//@packages[name='Portas']/@architectures.1"/>
         </components>
-        <components name="pl2" definition="//@packages[name='Componentes']/@architectures.15">
+        <components name="pl2" definition="//@packages[name='Componentes']/@architectures.14">
           <ports definition="//@packages[name='Portas']/@architectures.10"/>
           <ports definition="//@packages[name='Portas']/@architectures.1"/>
         </components>
-        <components name="pl3" definition="//@packages[name='Componentes']/@architectures.15">
+        <components name="pl3" definition="//@packages[name='Componentes']/@architectures.14">
           <ports definition="//@packages[name='Portas']/@architectures.10"/>
           <ports definition="//@packages[name='Portas']/@architectures.1"/>
         </components>
-        <components name="ce1" definition="//@packages[name='Componentes']/@architectures.16">
+        <components name="ce1" definition="//@packages[name='Componentes']/@architectures.15">
           <ports definition="//@packages[name='Portas']/@architectures.18"/>
         </components>
-        <components name="cs1" definition="//@packages[name='Componentes']/@architectures.17">
+        <components name="cs1" definition="//@packages[name='Componentes']/@architectures.16">
           <ports definition="//@packages[name='Portas']/@architectures.23"/>
+        </components>
+        <components name="rel1" definition="//@packages[name='Componentes']/@architectures.9">
+          <ports definition="//@packages[name='Portas']/@architectures.26"/>
+        </components>
+        <components name="gra1" definition="//@packages[name='Componentes']/@architectures.8">
+          <ports definition="//@packages[name='Portas']/@architectures.26"/>
+        </components>
+        <components name="md1" definition="//@packages[name='Componentes']/@architectures.19">
+          <ports definition="//@packages[name='Portas']/@architectures.21"/>
         </components>
         <connectors name="" definition="//@packages[name='Conectores']/@architectures.0">
           <bindings/>
@@ -57,13 +68,13 @@
         <connectors name="" definition="//@packages[name='Conectores']/@architectures.0">
           <bindings/>
         </connectors>
-        <connectors name="pc1" definition="//@packages[name='Conectores']/@architectures.4">
+        <connectors name="pc1" definition="//@packages[name='Conectores']/@architectures.3">
           <bindings/>
         </connectors>
-        <connectors name="pc2" definition="//@packages[name='Conectores']/@architectures.4">
+        <connectors name="pc2" definition="//@packages[name='Conectores']/@architectures.3">
           <bindings/>
         </connectors>
-        <connectors name="pc3" definition="//@packages[name='Conectores']/@architectures.4">
+        <connectors name="pc3" definition="//@packages[name='Conectores']/@architectures.3">
           <bindings/>
         </connectors>
         <connectors name="cl1">
@@ -78,19 +89,19 @@
         <connectors name="cc3" definition="//@packages[name='Conectores']/@architectures.0">
           <bindings/>
         </connectors>
-        <connectors name="pc4" definition="//@packages[name='Conectores']/@architectures.4">
+        <connectors name="pc4" definition="//@packages[name='Conectores']/@architectures.3">
           <bindings/>
         </connectors>
         <connectors name="ci1" definition="//@packages[name='Conectores']/@architectures.1">
           <bindings/>
         </connectors>
-        <connectors name="lc1" definition="//@packages[name='Conectores']/@architectures.5">
+        <connectors name="lc1">
           <bindings/>
         </connectors>
         <connectors name="cc1" definition="//@packages[name='Conectores']/@architectures.0">
           <bindings/>
         </connectors>
-        <connectors name="pc1" definition="//@packages[name='Conectores']/@architectures.3">
+        <connectors name="pc1">
           <bindings/>
         </connectors>
         <connectors name="cc2" definition="//@packages[name='Conectores']/@architectures.0">
@@ -105,53 +116,60 @@
         <connectors name="vl3">
           <bindings/>
         </connectors>
-        <connectors name="pc1" definition="//@packages[name='Conectores']/@architectures.3">
+        <connectors name="pc1">
           <bindings/>
         </connectors>
-        <connectors name="pc1" definition="//@packages[name='Conectores']/@architectures.3">
+        <connectors name="pc1">
           <bindings/>
         </connectors>
-        <connectors name="p2" definition="//@packages[name='Conectores']/@architectures.4">
+        <connectors name="p2" definition="//@packages[name='Conectores']/@architectures.3">
           <bindings firstPort="//@packages[name='Componentes']/@architectures.10/@composite/@components.3/@ports.1" secondPort="//@packages[name='Componentes']/@architectures.10/@composite/@components.4/@ports.0"/>
         </connectors>
-        <connectors name="p1" definition="//@packages[name='Conectores']/@architectures.4">
+        <connectors name="p1" definition="//@packages[name='Conectores']/@architectures.3">
           <bindings firstPort="//@packages[name='Componentes']/@architectures.10/@composite/@components.4/@ports.1" secondPort="//@packages[name='Componentes']/@architectures.10/@composite/@components.5/@ports.0"/>
         </connectors>
-        <connectors name="p3" definition="//@packages[name='Conectores']/@architectures.4">
+        <connectors name="p3" definition="//@packages[name='Conectores']/@architectures.3">
           <bindings firstPort="//@packages[name='Componentes']/@architectures.10/@composite/@components.5/@ports.1" secondPort="//@packages[name='Componentes']/@architectures.10/@composite/@components.2/@ports.1"/>
         </connectors>
         <connectors name="cpa1" definition="//@packages[name='Conectores']/@architectures.2">
           <bindings firstPort="//@packages[name='Componentes']/@architectures.10/@composite/@components.2/@ports.0" secondPort="//@packages[name='Componentes']/@architectures.10/@composite/@components.1/@ports.0"/>
         </connectors>
-        <connectors name="bd1" definition="//@packages[name='Conectores']/@architectures.10">
+        <connectors name="bd1" definition="//@packages[name='Conectores']/@architectures.8">
           <bindings firstPort="//@packages[name='Componentes']/@architectures.10/@composite/@components.6/@ports.0" secondPort="//@packages[name='Componentes']/@architectures.10/@composite/@components.0/@ports.0"/>
         </connectors>
-        <connectors name="qbd1" definition="//@packages[name='Conectores']/@architectures.11">
+        <connectors name="qbd1" definition="//@packages[name='Conectores']/@architectures.9">
           <bindings firstPort="//@packages[name='Componentes']/@architectures.10/@composite/@components.7/@ports.0" secondPort="//@packages[name='Componentes']/@architectures.10/@composite/@components.0/@ports.1"/>
+        </connectors>
+        <connectors name="con1" definition="//@packages[name='Conectores']/@architectures.11">
+          <bindings firstPort="//@packages[name='Componentes']/@architectures.10/@composite/@components.8/@ports.0" secondPort="//@packages[name='Componentes']/@architectures.10/@composite/@components.0/@ports.2"/>
+        </connectors>
+        <connectors name="con2" definition="//@packages[name='Conectores']/@architectures.11">
+          <bindings firstPort="//@packages[name='Componentes']/@architectures.10/@composite/@components.9/@ports.0" secondPort="//@packages[name='Componentes']/@architectures.10/@composite/@components.0/@ports.2"/>
+        </connectors>
+        <connectors name="r1" definition="//@packages[name='Conectores']/@architectures.7">
+          <bindings firstPort="//@packages[name='Componentes']/@architectures.10/@composite/@components.0/@ports.3" secondPort="//@packages[name='Componentes']/@architectures.10/@composite/@components.10/@ports.0"/>
         </connectors>
       </composite>
     </architectures>
     <architectures xsi:type="sysADL_Sintax:ComponentDef" name="DadosCP">
       <ports name="bd1" definition="//@packages[name='Portas']/@architectures.5"/>
       <ports name="" definition="//@packages[name='Portas']/@architectures.23"/>
+      <ports name="" definition="//@packages[name='Portas']/@architectures.22"/>
+      <ports name="" definition="//@packages[name='Portas']/@architectures.27"/>
       <composite>
         <components name="bd1" definition="//@packages[name='Componentes']/@architectures.1">
           <ports definition="//@packages[name='Portas']/@architectures.5"/>
-          <ports definition="//@packages[name='Portas']/@architectures.22"/>
-        </components>
-        <components name="g1" definition="//@packages[name='Componentes']/@architectures.8">
-          <ports name="" definition="//@packages[name='Portas']/@architectures.21"/>
-        </components>
-        <components name="r1" definition="//@packages[name='Componentes']/@architectures.9">
-          <ports definition="//@packages[name='Portas']/@architectures.21"/>
         </components>
         <components name="bd2" definition="//@packages[name='Componentes']/@architectures.1">
           <ports definition="//@packages[name='Portas']/@architectures.5"/>
-          <ports name="" definition="//@packages[name='Portas']/@architectures.22"/>
         </components>
-        <components name="qbd1" definition="//@packages[name='Componentes']/@architectures.18">
+        <components name="qbd1" definition="//@packages[name='Componentes']/@architectures.17">
           <ports definition="//@packages[name='Portas']/@architectures.5"/>
           <ports definition="//@packages[name='Portas']/@architectures.24"/>
+        </components>
+        <components name="cbd1" definition="//@packages[name='Componentes']/@architectures.18">
+          <ports definition="//@packages[name='Portas']/@architectures.27"/>
+          <ports definition="//@packages[name='Portas']/@architectures.26"/>
         </components>
         <delegations/>
         <delegations/>
@@ -161,36 +179,33 @@
         <delegations/>
         <delegations/>
         <delegations portProxy="//@packages[name='Componentes']/@architectures.11/@ports.0" fullPort="//@packages[name='Componentes']/@architectures.11/@composite/@components.0/@ports.0"/>
-        <delegations portProxy="//@packages[name='Componentes']/@architectures.11/@ports.0" fullPort="//@packages[name='Componentes']/@architectures.11/@composite/@components.3/@ports.0"/>
-        <delegations portProxy="//@packages[name='Portas']/@architectures.23/@ports.0" fullPort="//@packages[name='Componentes']/@architectures.11/@composite/@components.4/@ports.0"/>
-        <delegations portProxy="//@packages[name='Portas']/@architectures.23/@ports.1" fullPort="//@packages[name='Componentes']/@architectures.11/@composite/@components.4/@ports.1"/>
-        <connectors name="r1" definition="//@packages[name='Conectores']/@architectures.9">
-          <bindings firstPort="//@packages[name='Componentes']/@architectures.11/@composite/@components.3/@ports.1" secondPort="//@packages[name='Componentes']/@architectures.11/@composite/@components.2/@ports.0"/>
+        <delegations portProxy="//@packages[name='Componentes']/@architectures.11/@ports.0" fullPort="//@packages[name='Componentes']/@architectures.11/@composite/@components.1/@ports.0"/>
+        <delegations portProxy="//@packages[name='Portas']/@architectures.23/@ports.0" fullPort="//@packages[name='Componentes']/@architectures.11/@composite/@components.2/@ports.0"/>
+        <delegations portProxy="//@packages[name='Portas']/@architectures.23/@ports.1" fullPort="//@packages[name='Componentes']/@architectures.11/@composite/@components.2/@ports.1"/>
+        <delegations portProxy="//@packages[name='Componentes']/@architectures.11/@ports.3" fullPort="//@packages[name='Componentes']/@architectures.11/@composite/@components.3/@ports.0"/>
+        <delegations portProxy="//@packages[name='Componentes']/@architectures.11/@ports.2" fullPort="//@packages[name='Componentes']/@architectures.11/@composite/@components.3/@ports.1"/>
+        <connectors name="r1" definition="//@packages[name='Conectores']/@architectures.7">
+          <bindings/>
         </connectors>
-        <connectors name="r4" definition="//@packages[name='Conectores']/@architectures.9">
-          <bindings firstPort="//@packages[name='Componentes']/@architectures.11/@composite/@components.0/@ports.1" secondPort="//@packages[name='Componentes']/@architectures.11/@composite/@components.1/@ports.0"/>
+        <connectors name="r4" definition="//@packages[name='Conectores']/@architectures.7">
+          <bindings/>
         </connectors>
-        <connectors name="r3" definition="//@packages[name='Conectores']/@architectures.9">
-          <bindings firstPort="//@packages[name='Componentes']/@architectures.11/@composite/@components.3/@ports.1" secondPort="//@packages[name='Componentes']/@architectures.11/@composite/@components.1/@ports.0"/>
+        <connectors name="r3" definition="//@packages[name='Conectores']/@architectures.7">
+          <bindings/>
         </connectors>
-        <connectors name="r2" definition="//@packages[name='Conectores']/@architectures.9">
-          <bindings firstPort="//@packages[name='Componentes']/@architectures.11/@composite/@components.0/@ports.1" secondPort="//@packages[name='Componentes']/@architectures.11/@composite/@components.2/@ports.0"/>
+        <connectors name="r2" definition="//@packages[name='Conectores']/@architectures.7">
+          <bindings/>
         </connectors>
       </composite>
     </architectures>
-    <architectures xsi:type="sysADL_Sintax:ComponentDef" name="CalculateVagasCP"/>
     <architectures xsi:type="sysADL_Sintax:ComponentDef" name="ControladorVagasCP">
       <ports name="pa1" definition="//@packages[name='Portas']/@architectures.14"/>
       <ports name="p1" definition="//@packages[name='Portas']/@architectures.10"/>
       <composite>
         <components name="cv" definition="//@packages[name='Componentes']/@architectures.7">
-          <ports name="pa1" definition="//@packages[name='Portas']/@architectures.15"/>
+          <ports name="pa1" definition="//@packages[name='Portas']/@architectures.14"/>
           <ports name="p3" definition="//@packages[name='Portas']/@architectures.10"/>
         </components>
-        <components name="cv2" definition="//@packages[name='Componentes']/@architectures.12">
-          <ports definition="//@packages[name='Portas']/@architectures.8"/>
-          <ports definition="//@packages[name='Portas']/@architectures.14"/>
-        </components>
         <delegations/>
         <delegations/>
         <delegations/>
@@ -200,10 +215,11 @@
         <delegations/>
         <delegations/>
         <delegations/>
-        <delegations portProxy="//@packages[name='Componentes']/@architectures.13/@ports.1" fullPort="//@packages[name='Componentes']/@architectures.13/@composite/@components.0/@ports.1"/>
-        <delegations portProxy="//@packages[name='Componentes']/@architectures.13/@ports.0" fullPort="//@packages[name='Componentes']/@architectures.13/@composite/@components.1/@ports.1"/>
-        <connectors name="c1" definition="//@packages[name='Conectores']/@architectures.6">
-          <bindings firstPort="//@packages[name='Componentes']/@architectures.13/@composite/@components.0/@ports.0" secondPort="//@packages[name='Componentes']/@architectures.13/@composite/@components.1/@ports.0"/>
+        <delegations portProxy="//@packages[name='Componentes']/@architectures.12/@ports.1" fullPort="//@packages[name='Componentes']/@architectures.12/@composite/@components.0/@ports.1"/>
+        <delegations portProxy="//@packages[name='Componentes']/@architectures.12/@ports.0"/>
+        <delegations portProxy="//@packages[name='Componentes']/@architectures.12/@ports.0" fullPort="//@packages[name='Componentes']/@architectures.12/@composite/@components.0/@ports.0"/>
+        <connectors name="c1" definition="//@packages[name='Conectores']/@architectures.4">
+          <bindings firstPort="//@packages[name='Componentes']/@architectures.12/@composite/@components.0/@ports.0"/>
         </connectors>
       </composite>
     </architectures>
@@ -219,18 +235,27 @@
           <ports definition="//@packages[name='Portas']/@architectures.20"/>
         </components>
         <components name="i1" definition="//@packages[name='Componentes']/@architectures.0">
-          <ports name="" definition="//@packages[name='Portas']/@architectures.19"/>
-          <ports definition="//@packages[name='Portas']/@architectures.13"/>
+          <ports definition="//@packages[name='Portas']/@architectures.9"/>
         </components>
         <components name="c1" definition="//@packages[name='Componentes']/@architectures.2">
           <ports definition="//@packages[name='Portas']/@architectures.0"/>
         </components>
-        <delegations portProxy="//@packages[name='Componentes']/@architectures.16/@ports.0" fullPort="//@packages[name='Componentes']/@architectures.16/@composite/@components.1/@ports.1"/>
+        <components name="gd1" definition="//@packages[name='Componentes']/@architectures.20">
+          <ports definition="//@packages[name='Portas']/@architectures.19"/>
+          <ports definition="//@packages[name='Portas']/@architectures.18"/>
+        </components>
+        <delegations portProxy="//@packages[name='Componentes']/@architectures.15/@ports.0" fullPort="//@packages[name='Componentes']/@architectures.15/@composite/@components.3/@ports.1"/>
         <connectors name="pi1" definition="//@packages[name='Conectores']/@architectures.1">
-          <bindings firstPort="//@packages[name='Componentes']/@architectures.16/@composite/@components.0/@ports.0" secondPort="//@packages[name='Componentes']/@architectures.16/@composite/@components.1/@ports.0"/>
+          <bindings firstPort="//@packages[name='Componentes']/@architectures.15/@composite/@components.0/@ports.0"/>
         </connectors>
-        <connectors name="pc1" definition="//@packages[name='Conectores']/@architectures.7">
-          <bindings firstPort="//@packages[name='Componentes']/@architectures.16/@composite/@components.0/@ports.0" secondPort="//@packages[name='Componentes']/@architectures.16/@composite/@components.2/@ports.0"/>
+        <connectors name="pc1" definition="//@packages[name='Conectores']/@architectures.5">
+          <bindings firstPort="//@packages[name='Componentes']/@architectures.15/@composite/@components.0/@ports.0" secondPort="//@packages[name='Componentes']/@architectures.15/@composite/@components.2/@ports.0"/>
+        </connectors>
+        <connectors name="pc2" definition="//@packages[name='Conectores']/@architectures.5">
+          <bindings firstPort="//@packages[name='Componentes']/@architectures.15/@composite/@components.0/@ports.0" secondPort="//@packages[name='Componentes']/@architectures.15/@composite/@components.3/@ports.0"/>
+        </connectors>
+        <connectors name="ti1" definition="//@packages[name='Conectores']/@architectures.12">
+          <bindings firstPort="//@packages[name='Componentes']/@architectures.15/@composite/@components.3/@ports.1" secondPort="//@packages[name='Componentes']/@architectures.15/@composite/@components.1/@ports.0"/>
         </connectors>
       </composite>
     </architectures>
@@ -240,7 +265,7 @@
         <components name="l1" definition="//@packages[name='Componentes']/@architectures.3">
           <ports definition="//@packages[name='Portas']/@architectures.6"/>
         </components>
-        <components name="cv1" definition="//@packages[name='Componentes']/@architectures.14">
+        <components name="cv1" definition="//@packages[name='Componentes']/@architectures.13">
           <ports definition="//@packages[name='Portas']/@architectures.25"/>
           <ports definition="//@packages[name='Portas']/@architectures.3"/>
         </components>
@@ -252,26 +277,29 @@
           <ports definition="//@packages[name='Portas']/@architectures.16"/>
         </components>
         <delegations/>
-        <delegations portProxy="//@packages[name='Portas']/@architectures.23/@ports.1" fullPort="//@packages[name='Componentes']/@architectures.17/@composite/@components.1/@ports.0"/>
-        <delegations portProxy="//@packages[name='Portas']/@architectures.23/@ports.0" fullPort="//@packages[name='Componentes']/@architectures.17/@composite/@components.0/@ports.0"/>
-        <connectors name="l1" definition="//@packages[name='Conectores']/@architectures.5">
-          <bindings firstPort="//@packages[name='Componentes']/@architectures.17/@composite/@components.0/@ports.0"/>
+        <delegations portProxy="//@packages[name='Portas']/@architectures.23/@ports.1" fullPort="//@packages[name='Componentes']/@architectures.16/@composite/@components.1/@ports.0"/>
+        <delegations portProxy="//@packages[name='Portas']/@architectures.23/@ports.0" fullPort="//@packages[name='Componentes']/@architectures.16/@composite/@components.0/@ports.0"/>
+        <connectors name="l1">
+          <bindings firstPort="//@packages[name='Componentes']/@architectures.16/@composite/@components.0/@ports.0"/>
         </connectors>
-        <connectors name="pa1" definition="//@packages[name='Conectores']/@architectures.8">
+        <connectors name="pa1" definition="//@packages[name='Conectores']/@architectures.6">
           <bindings/>
         </connectors>
-        <connectors name="pc1" definition="//@packages[name='Conectores']/@architectures.3">
+        <connectors name="pc1">
           <bindings/>
         </connectors>
-        <connectors name="pc1" definition="//@packages[name='Conectores']/@architectures.8">
-          <bindings firstPort="//@packages[name='Componentes']/@architectures.17/@composite/@components.3/@ports.1" secondPort="//@packages[name='Componentes']/@architectures.17/@composite/@components.2/@ports.0"/>
+        <connectors name="pc1" definition="//@packages[name='Conectores']/@architectures.6">
+          <bindings firstPort="//@packages[name='Componentes']/@architectures.16/@composite/@components.3/@ports.1" secondPort="//@packages[name='Componentes']/@architectures.16/@composite/@components.2/@ports.0"/>
         </connectors>
-        <connectors name="newConnector">
-          <bindings firstPort="//@packages[name='Componentes']/@architectures.17/@composite/@components.1/@ports.1" secondPort="//@packages[name='Componentes']/@architectures.17/@composite/@components.3/@ports.0"/>
+        <connectors name="v1" definition="//@packages[name='Conectores']/@architectures.10">
+          <bindings firstPort="//@packages[name='Componentes']/@architectures.16/@composite/@components.1/@ports.1" secondPort="//@packages[name='Componentes']/@architectures.16/@composite/@components.3/@ports.0"/>
         </connectors>
       </composite>
     </architectures>
     <architectures xsi:type="sysADL_Sintax:ComponentDef" name="QueryBDCP"/>
+    <architectures xsi:type="sysADL_Sintax:ComponentDef" name="ConsultaBDCP"/>
+    <architectures xsi:type="sysADL_Sintax:ComponentDef" name="MontarDadosCP"/>
+    <architectures xsi:type="sysADL_Sintax:ComponentDef" name="GerarDadosCP"/>
   </packages>
   <packages name="Portas">
     <architectures xsi:type="sysADL_Sintax:SimplePortDef" name="CancelaIPT">
@@ -353,6 +381,12 @@
     <architectures xsi:type="sysADL_Sintax:SimplePortDef" name="DataHoraIPT">
       <flowType definition="//@packages[name='Tipos']/@architectures.0"/>
     </architectures>
+    <architectures xsi:type="sysADL_Sintax:SimplePortDef" name="ConsultaOPT" flowProperties="out">
+      <flowType name="" definition="//@packages[name='SysADL.types']/@architectures.2"/>
+    </architectures>
+    <architectures xsi:type="sysADL_Sintax:SimplePortDef" name="ConsultaIPT">
+      <flowType definition="//@packages[name='SysADL.types']/@architectures.2"/>
+    </architectures>
   </packages>
   <packages name="Conectores">
     <architectures xsi:type="sysADL_Sintax:ConnectorDef" name="ControladorCancelaCN">
@@ -370,56 +404,55 @@
       <ports name="p2" definition="//@packages[name='Portas']/@architectures.7"/>
       <flows flowType="//@packages[name='Tipos']/@architectures.4" source="//@packages[name='Conectores']/@architectures.2/@ports.0" destination="//@packages[name='Conectores']/@architectures.2/@ports.1"/>
     </architectures>
-    <architectures xsi:type="sysADL_Sintax:ConnectorDef" name="PagamentoCN">
-      <ports name=""/>
-      <ports/>
-      <flows flowType="//@packages[name='SysADL.types']/@architectures.4"/>
-      <flows flowType="//@packages[name='SysADL.types']/@architectures.4" source="//@packages[name='Conectores']/@architectures.3/@ports.0" destination="//@packages[name='Conectores']/@architectures.3/@ports.1"/>
-    </architectures>
     <architectures xsi:type="sysADL_Sintax:ConnectorDef" name="PresençaCN">
       <ports definition="//@packages[name='Portas']/@architectures.1"/>
       <ports definition="//@packages[name='Portas']/@architectures.10"/>
-      <flows flowType="//@packages[name='SysADL.types']/@architectures.0" source="//@packages[name='Conectores']/@architectures.4/@ports.0" destination="//@packages[name='Conectores']/@architectures.4/@ports.1"/>
-    </architectures>
-    <architectures xsi:type="sysADL_Sintax:ConnectorDef" name="LeitorCN">
-      <ports definition="//@packages[name='Portas']/@architectures.6"/>
-      <ports/>
-      <flows flowType="//@packages[name='Tipos']/@architectures.2" source="//@packages[name='Conectores']/@architectures.5/@ports.0" destination="//@packages[name='Conectores']/@architectures.5/@ports.1"/>
+      <flows flowType="//@packages[name='SysADL.types']/@architectures.0" source="//@packages[name='Conectores']/@architectures.3/@ports.0" destination="//@packages[name='Conectores']/@architectures.3/@ports.1"/>
     </architectures>
     <architectures xsi:type="sysADL_Sintax:ConnectorDef" name="ContadorCN">
       <ports definition="//@packages[name='Portas']/@architectures.15"/>
       <ports definition="//@packages[name='Portas']/@architectures.8"/>
-      <flows flowType="//@packages[name='SysADL.types']/@architectures.0" source="//@packages[name='Conectores']/@architectures.6/@ports.0" destination="//@packages[name='Conectores']/@architectures.6/@ports.1"/>
+      <flows flowType="//@packages[name='SysADL.types']/@architectures.0" source="//@packages[name='Conectores']/@architectures.4/@ports.0" destination="//@packages[name='Conectores']/@architectures.4/@ports.1"/>
     </architectures>
     <architectures xsi:type="sysADL_Sintax:ConnectorDef" name="PresencaCancelaCN">
       <ports definition="//@packages[name='Portas']/@architectures.20"/>
       <ports definition="//@packages[name='Portas']/@architectures.0"/>
-      <flows flowType="//@packages[name='SysADL.types']/@architectures.1" source="//@packages[name='Conectores']/@architectures.7/@ports.0" destination="//@packages[name='Conectores']/@architectures.7/@ports.1"/>
+      <flows flowType="//@packages[name='SysADL.types']/@architectures.1" source="//@packages[name='Conectores']/@architectures.5/@ports.0" destination="//@packages[name='Conectores']/@architectures.5/@ports.1"/>
     </architectures>
     <architectures xsi:type="sysADL_Sintax:ConnectorDef" name="PagouCancelaCN">
       <ports definition="//@packages[name='Portas']/@architectures.16"/>
       <ports definition="//@packages[name='Portas']/@architectures.0"/>
-      <flows flowType="//@packages[name='SysADL.types']/@architectures.1" source="//@packages[name='Conectores']/@architectures.8/@ports.0" destination="//@packages[name='Conectores']/@architectures.8/@ports.1"/>
+      <flows flowType="//@packages[name='SysADL.types']/@architectures.1" source="//@packages[name='Conectores']/@architectures.6/@ports.0" destination="//@packages[name='Conectores']/@architectures.6/@ports.1"/>
     </architectures>
     <architectures xsi:type="sysADL_Sintax:ConnectorDef" name="RelatorioCN">
       <ports definition="//@packages[name='Portas']/@architectures.22"/>
       <ports definition="//@packages[name='Portas']/@architectures.21"/>
-      <flows flowType="//@packages[name='Tipos']/@architectures.6" source="//@packages[name='Conectores']/@architectures.9/@ports.0" destination="//@packages[name='Conectores']/@architectures.9/@ports.1"/>
+      <flows flowType="//@packages[name='Tipos']/@architectures.6" source="//@packages[name='Conectores']/@architectures.7/@ports.0" destination="//@packages[name='Conectores']/@architectures.7/@ports.1"/>
     </architectures>
     <architectures xsi:type="sysADL_Sintax:ConnectorDef" name="BDCN">
       <ports definition="//@packages[name='Portas']/@architectures.18"/>
       <ports definition="//@packages[name='Portas']/@architectures.5"/>
-      <flows flowType="//@packages[name='Tipos']/@architectures.5" source="//@packages[name='Conectores']/@architectures.10/@ports.0" destination="//@packages[name='Conectores']/@architectures.10/@ports.1"/>
+      <flows flowType="//@packages[name='Tipos']/@architectures.5" source="//@packages[name='Conectores']/@architectures.8/@ports.0" destination="//@packages[name='Conectores']/@architectures.8/@ports.1"/>
     </architectures>
     <architectures xsi:type="sysADL_Sintax:ConnectorDef" name="QueryBDCN">
       <ports definition="//@packages[name='Portas']/@architectures.23"/>
       <ports definition="//@packages[name='Portas']/@architectures.23"/>
-      <flows flowType="//@packages[name='Tipos']/@architectures.5" source="//@packages[name='Conectores']/@architectures.11/@ports.0" destination="//@packages[name='Conectores']/@architectures.11/@ports.1"/>
+      <flows flowType="//@packages[name='Tipos']/@architectures.5" source="//@packages[name='Conectores']/@architectures.9/@ports.0" destination="//@packages[name='Conectores']/@architectures.9/@ports.1"/>
     </architectures>
     <architectures xsi:type="sysADL_Sintax:ConnectorDef" name="ValorCN">
-      <ports definition="//@packages[name='Portas']/@architectures.17"/>
       <ports definition="//@packages[name='Portas']/@architectures.3"/>
-      <flows flowType="//@packages[name='SysADL.types']/@architectures.4" source="//@packages[name='Conectores']/@architectures.12/@ports.0" destination="//@packages[name='Conectores']/@architectures.12/@ports.1"/>
+      <ports definition="//@packages[name='Portas']/@architectures.17"/>
+      <flows flowType="//@packages[name='SysADL.types']/@architectures.4" source="//@packages[name='Conectores']/@architectures.10/@ports.0" destination="//@packages[name='Conectores']/@architectures.10/@ports.1"/>
+    </architectures>
+    <architectures xsi:type="sysADL_Sintax:ConnectorDef" name="ConsultaCN">
+      <ports definition="//@packages[name='Portas']/@architectures.26"/>
+      <ports definition="//@packages[name='Portas']/@architectures.27"/>
+      <flows flowType="//@packages[name='SysADL.types']/@architectures.2" source="//@packages[name='Conectores']/@architectures.11/@ports.0" destination="//@packages[name='Conectores']/@architectures.11/@ports.1"/>
+    </architectures>
+    <architectures xsi:type="sysADL_Sintax:ConnectorDef" name="TicketImpressoraCN">
+      <ports definition="//@packages[name='Portas']/@architectures.18"/>
+      <ports definition="//@packages[name='Portas']/@architectures.9"/>
+      <flows flowType="//@packages[name='Tipos']/@architectures.5" source="//@packages[name='Conectores']/@architectures.12/@ports.0" destination="//@packages[name='Conectores']/@architectures.12/@ports.1"/>
     </architectures>
   </packages>
   <packages name="Tipos">
@@ -442,79 +475,94 @@
     </architectures>
   </packages>
   <packages name="Atividades">
-    <architectures xsi:type="sysADL_Sintax:ActivityDef" name="CalculaVagasAC">
-      <inParameters name="sp1" definition="//@packages[name='SysADL.types']/@architectures.1"/>
-      <inParameters name="sp2" definition="//@packages[name='SysADL.types']/@architectures.1"/>
-      <inParameters name="sp3" definition="//@packages[name='SysADL.types']/@architectures.1"/>
-      <outParameters name="resultado" definition="//@packages[name='Tipos']/@architectures.4"/>
+    <architectures xsi:type="sysADL_Sintax:ActivityDef" name="PresencaLampadaAC">
+      <inParameters name="ocupadas" definition="//@packages[name='SysADL.types']/@architectures.0"/>
+      <inParameters name="ocupada" definition="//@packages[name='SysADL.types']/@architectures.1"/>
+      <outParameters name="resultado" definition="//@packages[name='SysADL.types']/@architectures.0"/>
       <acbody>
-        <actions name="CalculateVagasAN" definition="//@packages[name='Atividades']/@architectures.1">
+        <actions name="PresencaLampadaAN" definition="//@packages[name='Atividades']/@architectures.1">
           <pinIn pinName="//@packages[name='Atividades']/@architectures.1/@inParameters.0"/>
           <pinIn pinName="//@packages[name='Atividades']/@architectures.1/@inParameters.1"/>
-          <pinIn pinName="//@packages[name='Atividades']/@architectures.1/@inParameters.2"/>
         </actions>
-        <flows xsi:type="sysADL_Sintax:ActivityDelegation" source="//@packages[name='Atividades']/@architectures.0/@inParameters.0" target="//@packages[name='Atividades']/@architectures.0/@acbody/@actions[name='CalculateVagasAN']/@pinIn.0"/>
-        <flows xsi:type="sysADL_Sintax:ActivityDelegation" source="//@packages[name='Atividades']/@architectures.0/@inParameters.1" target="//@packages[name='Atividades']/@architectures.0/@acbody/@actions[name='CalculateVagasAN']/@pinIn.1"/>
-        <flows xsi:type="sysADL_Sintax:ActivityDelegation" source="//@packages[name='Atividades']/@architectures.0/@inParameters.2" target="//@packages[name='Atividades']/@architectures.0/@acbody/@actions[name='CalculateVagasAN']/@pinIn.2"/>
-        <flows xsi:type="sysADL_Sintax:ActivityDelegation" source="//@packages[name='Atividades']/@architectures.0/@outParameters.0" target="//@packages[name='Atividades']/@architectures.0/@acbody/@actions[name='CalculateVagasAN']"/>
+        <flows xsi:type="sysADL_Sintax:ActivityDelegation" source="//@packages[name='Atividades']/@architectures.0/@inParameters.0" target="//@packages[name='Atividades']/@architectures.0/@acbody/@actions[name='PresencaLampadaAN']/@pinIn.0"/>
+        <flows xsi:type="sysADL_Sintax:ActivityDelegation" source="//@packages[name='Atividades']/@architectures.0/@inParameters.1" target="//@packages[name='Atividades']/@architectures.0/@acbody/@actions[name='PresencaLampadaAN']/@pinIn.1"/>
+        <flows xsi:type="sysADL_Sintax:ActivityDelegation" source="//@packages[name='Atividades']/@architectures.0/@outParameters.0" target="//@packages[name='Atividades']/@architectures.0/@acbody/@actions[name='PresencaLampadaAN']"/>
       </acbody>
     </architectures>
-    <architectures xsi:type="sysADL_Sintax:ActionDef" name="CalculaVagasAN" returnType="//@packages[name='Tipos']/@architectures.4">
-      <inParameters name="sp1" definition="//@packages[name='SysADL.types']/@architectures.1"/>
-      <inParameters name="sp2" definition="//@packages[name='SysADL.types']/@architectures.1"/>
-      <inParameters name="sp3" definition="//@packages[name='SysADL.types']/@architectures.1"/>
-      <constraints definition="//@packages[name='Equacoes']/@architectures.0" params="//@packages[name='Atividades']/@architectures.0/@inParameters.0 //@packages[name='Atividades']/@architectures.0/@inParameters.1 //@packages[name='Equacoes']/@architectures.0/@paramIn.1"/>
-      <delegations source="//@packages[name='Atividades']/@architectures.1/@inParameters.0" target="//@packages[name='Equacoes']/@architectures.0/@paramIn.0"/>
-      <delegations source="//@packages[name='Atividades']/@architectures.1/@inParameters.1" target="//@packages[name='Equacoes']/@architectures.0/@paramIn.1"/>
-      <delegations source="//@packages[name='Atividades']/@architectures.1/@inParameters.2" target="//@packages[name='Equacoes']/@architectures.0/@paramIn.2"/>
-      <delegations source="//@packages[name='Atividades']/@architectures.1" target="//@packages[name='Equacoes']/@architectures.0/@paramOut.0"/>
+    <architectures xsi:type="sysADL_Sintax:ActionDef" name="PresencaLampadaAN" returnType="//@packages[name='SysADL.types']/@architectures.0">
+      <inParameters name="ocupadas" definition="//@packages[name='SysADL.types']/@architectures.0"/>
+      <inParameters name="ocupada" definition="//@packages[name='SysADL.types']/@architectures.1"/>
+      <constraints definition="//@packages[name='Equacoes']/@architectures.0"/>
     </architectures>
-    <architectures xsi:type="sysADL_Sintax:ActivityDef" name="AcenderLampadaAC">
-      <inParameters name="presence" definition="//@packages[name='SysADL.types']/@architectures.1"/>
-      <outParameters name="aceso" definition="//@packages[name='SysADL.types']/@architectures.1"/>
+    <architectures xsi:type="sysADL_Sintax:ActivityDef" name="ContadorVagasAC">
+      <inParameters name="ocupadas" definition="//@packages[name='SysADL.types']/@architectures.0"/>
+      <outParameters name="resultado" definition="//@packages[name='Tipos']/@architectures.4"/>
       <acbody>
-        <actions name="DeterminaCorAN" definition="//@packages[name='Atividades']/@architectures.3">
+        <actions name="ContadorVagasAN" definition="//@packages[name='Atividades']/@architectures.3">
           <pinIn pinName="//@packages[name='Atividades']/@architectures.3/@inParameters.0"/>
         </actions>
-        <flows xsi:type="sysADL_Sintax:ActivityDelegation"/>
-        <flows xsi:type="sysADL_Sintax:ActivityDelegation" source="//@packages[name='Atividades']/@architectures.2/@inParameters.0" target="//@packages[name='Atividades']/@architectures.2/@acbody/@actions[name='DeterminaCorAN']/@pinIn.0"/>
-        <flows xsi:type="sysADL_Sintax:ActivityDelegation" source="//@packages[name='Atividades']/@architectures.2/@outParameters.0" target="//@packages[name='Atividades']/@architectures.2/@acbody/@actions[name='DeterminaCorAN']"/>
+        <flows xsi:type="sysADL_Sintax:ActivityDelegation" source="//@packages[name='Atividades']/@architectures.2/@inParameters.0" target="//@packages[name='Atividades']/@architectures.2/@acbody/@actions[name='ContadorVagasAN']/@pinIn.0"/>
+        <flows xsi:type="sysADL_Sintax:ActivityDelegation" source="//@packages[name='Atividades']/@architectures.2/@outParameters.0" target="//@packages[name='Atividades']/@architectures.2/@acbody/@actions[name='ContadorVagasAN']"/>
       </acbody>
     </architectures>
-    <architectures xsi:type="sysADL_Sintax:ActionDef" name="AcenderLampadaAN" returnType="//@packages[name='SysADL.types']/@architectures.1">
-      <inParameters name="presence" definition="//@packages[name='SysADL.types']/@architectures.1"/>
-      <constraints definition="//@packages[name='Equacoes']/@architectures.1" params="//@packages[name='Atividades']/@architectures.2/@inParameters.0"/>
-      <delegations/>
-      <delegations source="//@packages[name='Atividades']/@architectures.3/@inParameters.0" target="//@packages[name='Equacoes']/@architectures.1/@paramIn.0"/>
-      <delegations source="//@packages[name='Atividades']/@architectures.3" target="//@packages[name='Equacoes']/@architectures.1/@paramOut.0"/>
+    <architectures xsi:type="sysADL_Sintax:ActionDef" name="ContadorVagasAN" returnType="//@packages[name='Tipos']/@architectures.4">
+      <inParameters name="ocupadas"/>
+      <constraints definition="//@packages[name='Equacoes']/@architectures.1"/>
+    </architectures>
+    <architectures xsi:type="sysADL_Sintax:ActivityDef" name="GerarDadosAC">
+      <inParameters name="presenca" definition="//@packages[name='SysADL.types']/@architectures.1"/>
+      <outParameters name="ticket" definition="//@packages[name='Tipos']/@architectures.5"/>
+      <acbody>
+        <actions name="GerarDadosAN" definition="//@packages[name='Atividades']/@architectures.5">
+          <pinIn pinName="//@packages[name='Atividades']/@architectures.5/@inParameters.0"/>
+        </actions>
+        <flows xsi:type="sysADL_Sintax:ActivityDelegation" source="//@packages[name='Atividades']/@architectures.4/@inParameters.0" target="//@packages[name='Atividades']/@architectures.4/@acbody/@actions[name='GerarDadosAN']/@pinIn.0"/>
+        <flows xsi:type="sysADL_Sintax:ActivityDelegation" source="//@packages[name='Atividades']/@architectures.4/@outParameters.0" target="//@packages[name='Atividades']/@architectures.4/@acbody/@actions[name='GerarDadosAN']"/>
+      </acbody>
+    </architectures>
+    <architectures xsi:type="sysADL_Sintax:ActionDef" name="GerarDadosAN" returnType="//@packages[name='Tipos']/@architectures.5">
+      <inParameters name="presenca" definition="//@packages[name='SysADL.types']/@architectures.1"/>
+    </architectures>
+    <architectures xsi:type="sysADL_Sintax:ActivityDef" name="CalculaValorAC">
+      <inParameters name="entrada" definition="//@packages[name='Tipos']/@architectures.0"/>
+      <outParameters name="resultado" definition="//@packages[name='SysADL.types']/@architectures.4"/>
+      <acbody>
+        <actions name="CalculaValorAN" definition="//@packages[name='Atividades']/@architectures.7">
+          <pinIn pinName="//@packages[name='Atividades']/@architectures.7/@inParameters.0"/>
+        </actions>
+        <flows xsi:type="sysADL_Sintax:ActivityDelegation" source="//@packages[name='Atividades']/@architectures.6/@inParameters.0" target="//@packages[name='Atividades']/@architectures.6/@acbody/@actions[name='CalculaValorAN']/@pinIn.0"/>
+        <flows xsi:type="sysADL_Sintax:ActivityDelegation" source="//@packages[name='Atividades']/@architectures.6/@outParameters.0" target="//@packages[name='Atividades']/@architectures.6/@acbody/@actions[name='CalculaValorAN']"/>
+      </acbody>
+    </architectures>
+    <architectures xsi:type="sysADL_Sintax:ActionDef" name="CalculaValorAN" returnType="//@packages[name='SysADL.types']/@architectures.4">
+      <inParameters name="entrada" definition="//@packages[name='Tipos']/@architectures.0"/>
+      <constraints definition="//@packages[name='Equacoes']/@architectures.3"/>
     </architectures>
   </packages>
   <packages name="Equacoes">
-    <architectures xsi:type="sysADL_Sintax:ConstraintDef" name="CalculaVagasEq">
-      <paramIn xsi:type="sysADL_Sintax:Pin" name="sp1" definition="//@packages[name='SysADL.types']/@architectures.1"/>
-      <paramIn xsi:type="sysADL_Sintax:Pin" name="sp2" definition="//@packages[name='SysADL.types']/@architectures.1"/>
-      <paramIn xsi:type="sysADL_Sintax:Pin" name="sp3" definition="//@packages[name='SysADL.types']/@architectures.1"/>
+    <architectures xsi:type="sysADL_Sintax:ConstraintDef" name="PresencaLampadaEQ">
+      <paramIn xsi:type="sysADL_Sintax:Pin" name="ocupadas" definition="//@packages[name='SysADL.types']/@architectures.0"/>
+      <paramIn xsi:type="sysADL_Sintax:Pin" name="ocupada" definition="//@packages[name='SysADL.types']/@architectures.1"/>
+      <paramOut xsi:type="sysADL_Sintax:Pin" name="resultado" definition="//@packages[name='SysADL.types']/@architectures.0"/>
+      <equation value="{if ocupada then resultado = ocupadas  + 1 else resultado = ocupadas}"/>
+    </architectures>
+    <architectures xsi:type="sysADL_Sintax:ConstraintDef" name="ContadorVagasEQ">
+      <paramIn xsi:type="sysADL_Sintax:Pin" name="ocupadas" definition="//@packages[name='SysADL.types']/@architectures.0"/>
       <paramOut xsi:type="sysADL_Sintax:Pin" name="resultado" definition="//@packages[name='Tipos']/@architectures.4"/>
-      <equation value="{resultado = (sp1 ? 0 : 1) + (sp2 ? 0 : 1) + (sp3 ? 0 : 1)}"/>
+      <equation value="{Painel::livres == 3 - ocupadas; Painel::ocupadas = ocupadas}"/>
     </architectures>
-    <architectures xsi:type="sysADL_Sintax:ConstraintDef" name="AcenderLampadaEQ">
-      <paramIn xsi:type="sysADL_Sintax:Pin" name="presence" definition="//@packages[name='SysADL.types']/@architectures.1"/>
-      <paramOut xsi:type="sysADL_Sintax:Pin" name="aceso" definition="//@packages[name='SysADL.types']/@architectures.1"/>
-      <equation value="{if presence then aceso = true else aceso = false}"/>
+    <architectures xsi:type="sysADL_Sintax:ConstraintDef" name="GerarDadosEQ">
+      <paramIn xsi:type="sysADL_Sintax:Pin" name="presenca" definition="//@packages[name='SysADL.types']/@architectures.1"/>
+      <paramOut xsi:type="sysADL_Sintax:Pin" name="ticket" definition="//@packages[name='Tipos']/@architectures.5"/>
+      <equation value="{if presenca then Ticket::entrada = DataHora; Ticket::codigo = BarCode}"/>
     </architectures>
-  </packages>
-  <packages name="Executavel" elementImports="//@packages[name='Atividades']/@architectures.3 //@packages[name='Atividades']/@architectures.1">
-    <architectures xsi:type="sysADL_Sintax:Executable" name="AcenderLampadaEX" associatedAction="//@packages[name='Atividades']/@architectures.3" returnType="//@packages[name='SysADL.types']/@architectures.1">
-      <actions xsi:type="sysADL_Sintax:Expression" value="return presence;"/>
-      <params name="presence" definition="//@packages[name='SysADL.types']/@architectures.1"/>
-    </architectures>
-    <architectures xsi:type="sysADL_Sintax:Executable" name="CalculaVagasEX" associatedAction="//@packages[name='Atividades']/@architectures.1" returnType="//@packages[name='Tipos']/@architectures.4">
-      <actions xsi:type="sysADL_Sintax:Expression" value="return (sp1 ? 0 : 1) + (sp2 ? 0 : 1) + (sp3 ? 0 : 1)"/>
-      <params name="sp1" definition="//@packages[name='SysADL.types']/@architectures.1"/>
-      <params name="sp2" definition="//@packages[name='SysADL.types']/@architectures.1"/>
-      <params name="sp3" definition="//@packages[name='SysADL.types']/@architectures.1"/>
+    <architectures xsi:type="sysADL_Sintax:ConstraintDef" name="CalculaValorEQ">
+      <paramIn xsi:type="sysADL_Sintax:Pin" name="entrada" definition="//@packages[name='Tipos']/@architectures.0"/>
+      <paramOut xsi:type="sysADL_Sintax:Pin" name="resultado" definition="//@packages[name='SysADL.types']/@architectures.4"/>
+      <equation value="{resultado = (entrada - DataHora) * 2}"/>
     </architectures>
   </packages>
+  <packages name="Executavel"/>
   <requirements name="Relatório Mensal"/>
   <requirements name="Relatório Semanal"/>
   <requirements name="Relatório Diário"/>
