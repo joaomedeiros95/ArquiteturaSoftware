@@ -456,7 +456,7 @@
     </architectures>
   </packages>
   <packages name="Tipos">
-    <architectures xsi:type="sysADL_Sintax:ValueTypeDef" name="DataHora"/>
+    <architectures xsi:type="sysADL_Sintax:ValueTypeDef" name="DataHora" unit="//@packages[name='Tipos']/@architectures.10"/>
     <architectures xsi:type="sysADL_Sintax:ValueTypeDef" name="Code"/>
     <architectures xsi:type="sysADL_Sintax:ValueTypeDef" name="QrCode" superType="//@packages[name='Tipos']/@architectures.1"/>
     <architectures xsi:type="sysADL_Sintax:ValueTypeDef" name="BarCode" superType="//@packages[name='Tipos']/@architectures.1"/>
@@ -478,6 +478,8 @@
       <dataTypeAttributes name="eixoy" definition="//@packages[name='SysADL.types']/@architectures.4"/>
     </architectures>
     <architectures xsi:type="sysADL_Sintax:DataTypeDef" name="Dados"/>
+    <architectures xsi:type="sysADL_Sintax:DimensionDef" name="DataHora"/>
+    <architectures xsi:type="sysADL_Sintax:UnitDef" name="DataHoraPadrao" dimension="//@packages[name='Tipos']/@architectures.9"/>
   </packages>
   <packages name="Atividades">
     <architectures xsi:type="sysADL_Sintax:ActivityDef" name="PresencaLampadaAC">
