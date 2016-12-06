@@ -6929,7 +6929,7 @@
           </ownedStyle>
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/SysADL.viewpoints/description/SysADL_vp.odesign#//@ownedViewpoints[name='SysADL.Structural']/@ownedRepresentations[name='SysADL.IBD']/@defaultLayer/@containerMappings[name='IBD.Config']/@borderedNodeMappings[name='IBD.Ports']"/>
         </ownedBorderedNodes>
-        <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_6GE6kLtREeagzee0QvrOuQ" name="&lt;&lt;proxy>>&#xA;:ResultadoConsultaOPT" tooltipText="Port " incomingEdges="_D9jWALtSEeagzee0QvrOuQ" width="3" height="3" resizeKind="NSEW">
+        <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_6GE6kLtREeagzee0QvrOuQ" name="&lt;&lt;proxy>>&#xA;:DadosOPT" tooltipText="Port " incomingEdges="_D9jWALtSEeagzee0QvrOuQ" width="3" height="3" resizeKind="NSEW">
           <target xmi:type="sysADL_Sintax:PortUse" href="My.sysadl#//@packages[name='Componentes']/@architectures.11/@ports.2"/>
           <semanticElements xmi:type="sysADL_Sintax:PortUse" href="My.sysadl#//@packages[name='Componentes']/@architectures.11/@ports.2"/>
           <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
@@ -13398,7 +13398,7 @@
               <layoutConstraint xmi:type="notation:Bounds" xmi:id="_DFmufrtfEeagzee0QvrOuQ" x="590" y="60" width="20" height="20"/>
             </children>
             <styles xmi:type="notation:ShapeStyle" xmi:id="_DFmucbtfEeagzee0QvrOuQ" fontName="Noto Sans" fontHeight="8"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_DFmucrtfEeagzee0QvrOuQ" x="130" y="40"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_DFmucrtfEeagzee0QvrOuQ" x="130" y="40" height="168"/>
           </children>
           <styles xmi:type="notation:DiagramStyle" xmi:id="_DFmHcrtfEeagzee0QvrOuQ"/>
           <edges xmi:type="notation:Edge" xmi:id="_HitL4LtfEeagzee0QvrOuQ" type="4001" element="_Hh898LtfEeagzee0QvrOuQ" source="_DFmud7tfEeagzee0QvrOuQ" target="_DFnVgrtfEeagzee0QvrOuQ">
@@ -13850,7 +13850,7 @@
               <styles xmi:type="notation:FilteringStyle" xmi:id="_FwBiIq0NEeavUpRzqsulAw"/>
             </children>
             <styles xmi:type="notation:ShapeStyle" xmi:id="_Fv_s-q0NEeavUpRzqsulAw" fontName="Noto Sans" fontHeight="8"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Fv_s-60NEeavUpRzqsulAw" width="808" height="498"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Fv_s-60NEeavUpRzqsulAw" x="305" y="20" width="808" height="498"/>
           </children>
           <styles xmi:type="notation:DiagramStyle" xmi:id="_Fv_s-K0NEeavUpRzqsulAw"/>
         </data>
@@ -13858,6 +13858,9 @@
       <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_Fv_s860NEeavUpRzqsulAw" name="bdd [Execution] Executavel">
         <target xmi:type="sysADL_Sintax:Package" href="My.sysadl#//@packages[name='Executavel']"/>
         <semanticElements xmi:type="sysADL_Sintax:Package" href="My.sysadl#//@packages[name='Executavel']"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
         <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_Fv_s9K0NEeavUpRzqsulAw" showIcon="false" labelAlignment="LEFT" borderSize="1" borderSizeComputationExpression="1" foregroundColor="255,255,255">
           <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/SysADL.viewpoints/description/SysADL_vp.odesign#//@ownedViewpoints[name='SysADL.Executable']/@ownedRepresentations[name='SysADL.Execution.BDD']/@defaultLayer/@containerMappings[name='SysADL.Execution.Self']/@style"/>
         </ownedStyle>
