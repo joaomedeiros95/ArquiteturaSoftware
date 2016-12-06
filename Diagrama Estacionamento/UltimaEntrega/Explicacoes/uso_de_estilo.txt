@@ -1,7 +1,0 @@
-Na minha versão da arquitetura do sistema de estacionamento utilizei o pipeline nos "PresencaLampadaCP", funcionando dessa forma: 
-
-- Cada sensor é ligado com o próximo sensor e manda para o próximo a quantidade de vagas ocupadas acumuladas até agora, o próximo sensor pega o valor acumulado e soma com o seu valor (se estiver ocupado soma 1 se não soma nada).
-
-Com o pipeline utilizado nesse local eu consigo diminuir a quantidade de fios já que não é mais necessário mandar um fio de cada sensor para o controlador de vagas e também aumento a Modificabilidade já que para inserir uma nova vaga basta colocar um novo fio ligando a um sensor já existente.
-
-PS: Com essa abordagem o sistema perde a tolerência a falhas já que se algum sensor falhar todos param de funcionar mas eu achei melhor fazer assim pois diminui o custo e aumenta a modificabilidade.
