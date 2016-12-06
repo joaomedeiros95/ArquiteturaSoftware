@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<sysADL_Sintax:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysADL_Sintax="com.sysADL_Sintax">
+<sysADL_Sintax:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sysADL_Sintax="com.sysADL_Sintax" involvedElements="//@packages[name='Componentes']/@architectures.15 //@packages[name='Componentes']/@architectures.16 //@packages[name='Componentes']/@architectures.14 //@packages[name='Componentes']/@architectures.12 //@packages[name='Componentes']/@architectures.9 //@packages[name='Componentes']/@architectures.8 //@packages[name='Componentes']/@architectures.10">
   <packages name="SysADL.types">
     <architectures xsi:type="sysADL_Sintax:DataTypeDef" name="Int"/>
     <architectures xsi:type="sysADL_Sintax:DataTypeDef" name="Boolean"/>
@@ -676,8 +676,8 @@
   <requirements name="Gráfico Semanal"/>
   <requirements name="Gráfico Diário"/>
   <requirements name="Gráfico Mensal"/>
-  <requirements name="Sistema de Controle de Estacionamento">
-    <composition name="Entrada de Veículo" text="">
+  <requirements name="Sistema de Controle de Estacionamento" satisfiedBy="//@packages[name='Componentes']/@architectures.10">
+    <composition name="Entrada de Veículo" text="" satisfiedBy="//@packages[name='Componentes']/@architectures.15">
       <composition name="Detecção de Veículo" text="O sistema deve ser capaz de detectar automaticamente a chegada de um veículo">
         <composition name="Imprimir Ticket" text="O sistema deverá ser capaz de imprimir um ticket" satisfiedBy="//@packages[name='Componentes']/@architectures.0">
           <composition name="Registrar no Banco de Dados" text="Registrar no banco de dados central a hora de entrada e o id do ticket" satisfiedBy="//@packages[name='Componentes']/@architectures.1">
@@ -686,17 +686,17 @@
         </composition>
       </composition>
     </composition>
-    <composition name="Saída de Veículos">
+    <composition name="Saída de Veículos" satisfiedBy="//@packages[name='Componentes']/@architectures.16">
       <composition name="Ler Ticket " text="Antes da saída do veículo o sistema deverá ler o ticket do cliente" satisfiedBy="//@packages[name='Componentes']/@architectures.3">
         <composition name="Receber Pagamento" text="O sistema deverá  calcular o valor devido e posteriormente receber o pagamento do cliente, tanto em dinheiro como em cartão" satisfiedBy="//@packages[name='Componentes']/@architectures.4">
           <composition name="Abrir Cancela" text="" satisfiedBy="//@packages[name='Componentes']/@architectures.2"/>
         </composition>
       </composition>
     </composition>
-    <composition name="Status da Vaga" text="O sistema deve indicar o status da Vaga">
+    <composition name="Status da Vaga" text="O sistema deve indicar o status da Vaga" satisfiedBy="//@packages[name='Componentes']/@architectures.14">
       <composition name="Atualizar Status da Vaga" text="O Sistema deve atualizar o status da vaga quando um carro estacionar" satisfiedBy="//@packages[name='Componentes']/@architectures.5"/>
     </composition>
-    <composition name="Contagem de Vagas">
+    <composition name="Contagem de Vagas" satisfiedBy="//@packages[name='Componentes']/@architectures.12">
       <composition name="Atualizar contagem de vagas" text="Ao estacionar ou sair de uma vaga de estacionamento o sistema deverá atualizar a contagem de vagas" satisfiedBy="//@packages[name='Componentes']/@architectures.7"/>
       <composition name="Mostrar Contagem de Vagas" text="O sistema deverá ser capaz de mostrar ao usuário um contador de vagas disponíveis em um painel" satisfiedBy="//@packages[name='Componentes']/@architectures.6"/>
     </composition>
