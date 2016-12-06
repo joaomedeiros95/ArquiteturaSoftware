@@ -498,6 +498,9 @@
       <inParameters name="ocupadas" definition="//@packages[name='SysADL.types']/@architectures.0"/>
       <inParameters name="ocupada" definition="//@packages[name='SysADL.types']/@architectures.1"/>
       <constraints definition="//@packages[name='Equacoes']/@architectures.0"/>
+      <delegations source="//@packages[name='Atividades']/@architectures.1/@inParameters.0" target="//@packages[name='Equacoes']/@architectures.0/@paramIn.0"/>
+      <delegations source="//@packages[name='Atividades']/@architectures.1/@inParameters.1" target="//@packages[name='Equacoes']/@architectures.0/@paramIn.1"/>
+      <delegations source="//@packages[name='Atividades']/@architectures.1" target="//@packages[name='Equacoes']/@architectures.0/@paramOut.0"/>
     </architectures>
     <architectures xsi:type="sysADL_Sintax:ActivityDef" name="ContadorVagasAC">
       <inParameters name="ocupadas" definition="//@packages[name='SysADL.types']/@architectures.0"/>
@@ -513,6 +516,8 @@
     <architectures xsi:type="sysADL_Sintax:ActionDef" name="ContadorVagasAN" returnType="//@packages[name='Tipos']/@architectures.4">
       <inParameters name="ocupadas" definition="//@packages[name='SysADL.types']/@architectures.0"/>
       <constraints definition="//@packages[name='Equacoes']/@architectures.1"/>
+      <delegations source="//@packages[name='Atividades']/@architectures.3/@inParameters.0" target="//@packages[name='Equacoes']/@architectures.1/@paramIn.0"/>
+      <delegations source="//@packages[name='Atividades']/@architectures.3" target="//@packages[name='Equacoes']/@architectures.1/@paramOut.0"/>
     </architectures>
     <architectures xsi:type="sysADL_Sintax:ActivityDef" name="GerarDadosAC">
       <inParameters name="presenca" definition="//@packages[name='SysADL.types']/@architectures.1"/>
@@ -527,6 +532,9 @@
     </architectures>
     <architectures xsi:type="sysADL_Sintax:ActionDef" name="GerarDadosAN" returnType="//@packages[name='Tipos']/@architectures.5">
       <inParameters name="presenca" definition="//@packages[name='SysADL.types']/@architectures.1"/>
+      <constraints definition="//@packages[name='Equacoes']/@architectures.2"/>
+      <delegations source="//@packages[name='Atividades']/@architectures.5/@inParameters.0" target="//@packages[name='Equacoes']/@architectures.2/@paramIn.0"/>
+      <delegations source="//@packages[name='Atividades']/@architectures.5" target="//@packages[name='Equacoes']/@architectures.2/@paramOut.0"/>
     </architectures>
     <architectures xsi:type="sysADL_Sintax:ActivityDef" name="CalculaValorAC">
       <inParameters name="entrada" definition="//@packages[name='Tipos']/@architectures.0"/>
@@ -542,6 +550,8 @@
     <architectures xsi:type="sysADL_Sintax:ActionDef" name="CalculaValorAN" returnType="//@packages[name='SysADL.types']/@architectures.4">
       <inParameters name="entrada" definition="//@packages[name='Tipos']/@architectures.0"/>
       <constraints definition="//@packages[name='Equacoes']/@architectures.3"/>
+      <delegations source="//@packages[name='Atividades']/@architectures.7/@inParameters.0" target="//@packages[name='Equacoes']/@architectures.3/@paramIn.0"/>
+      <delegations source="//@packages[name='Atividades']/@architectures.7" target="//@packages[name='Equacoes']/@architectures.3/@paramOut.0"/>
     </architectures>
     <architectures xsi:type="sysADL_Sintax:ActivityDef" name="GraficoAC">
       <outParameters name="query" definition="//@packages[name='SysADL.types']/@architectures.2"/>
@@ -552,6 +562,7 @@
     </architectures>
     <architectures xsi:type="sysADL_Sintax:ActionDef" name="GraficoAN" returnType="//@packages[name='SysADL.types']/@architectures.2">
       <constraints definition="//@packages[name='Equacoes']/@architectures.4"/>
+      <delegations source="//@packages[name='Atividades']/@architectures.9" target="//@packages[name='Equacoes']/@architectures.4/@paramOut.0"/>
     </architectures>
     <architectures xsi:type="sysADL_Sintax:ActivityDef" name="RelatorioAC">
       <outParameters name="query" definition="//@packages[name='SysADL.types']/@architectures.2"/>
@@ -560,7 +571,10 @@
         <flows xsi:type="sysADL_Sintax:ActivityDelegation" source="//@packages[name='Atividades']/@architectures.10/@outParameters.0" target="//@packages[name='Atividades']/@architectures.10/@acbody/@actions[name='RelatorioAN']"/>
       </acbody>
     </architectures>
-    <architectures xsi:type="sysADL_Sintax:ActionDef" name="RelatorioAN" returnType="//@packages[name='SysADL.types']/@architectures.2"/>
+    <architectures xsi:type="sysADL_Sintax:ActionDef" name="RelatorioAN" returnType="//@packages[name='SysADL.types']/@architectures.2">
+      <constraints definition="//@packages[name='Equacoes']/@architectures.5"/>
+      <delegations source="//@packages[name='Atividades']/@architectures.11" target="//@packages[name='Equacoes']/@architectures.5/@paramOut.0"/>
+    </architectures>
     <architectures xsi:type="sysADL_Sintax:ActivityDef" name="MontarDadosAC">
       <inParameters name="dados" definition="//@packages[name='Tipos']/@architectures.8"/>
       <outParameters name="resultado" definition="//@packages[name='SysADL.types']/@architectures.2"/>
@@ -575,6 +589,8 @@
     <architectures xsi:type="sysADL_Sintax:ActionDef" name="MontarDadosAN" returnType="//@packages[name='SysADL.types']/@architectures.2">
       <inParameters name="dados" definition="//@packages[name='Tipos']/@architectures.8"/>
       <constraints definition="//@packages[name='Equacoes']/@architectures.6"/>
+      <delegations source="//@packages[name='Atividades']/@architectures.13/@inParameters.0" target="//@packages[name='Equacoes']/@architectures.6/@paramIn.0"/>
+      <delegations source="//@packages[name='Atividades']/@architectures.13" target="//@packages[name='Equacoes']/@architectures.6/@paramOut.0"/>
     </architectures>
   </packages>
   <packages name="Equacoes">
